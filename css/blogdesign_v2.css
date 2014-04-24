@@ -1,0 +1,39 @@
+body,
+html {
+  height: 100%;
+}
+body {
+  background: #ecf0f1;
+  color: #16a085;
+  font-size: 50px;
+  height: 2000px;
+}
+section#nav_scrollbar {
+  width: 150px;
+  height: 100%;
+  background: #16a085;
+}
+section#nav_scrollbar div#scroll_track {
+  background: #bdc3c7;
+  width: 10px;
+  height: 90%;
+  position: fixed;
+  top: 5%;
+  left: 70px;
+  /*Rounded corners*/
+
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+section#nav_scrollbar div#scrolling_nav {
+  width: 150px;
+  height: 150px;
+  background: #ecf0f1;
+  position: fixed;
+}
+section#content_area {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+}

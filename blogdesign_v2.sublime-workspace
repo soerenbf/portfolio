@@ -1,0 +1,206 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"re",
+				"require"
+			],
+			[
+				"r",
+				"request"
+			],
+			[
+				"if",
+				"ife	if … else"
+			],
+			[
+				"Con",
+				"console"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 347.0,
+		"selected_items":
+		[
+			[
+				"pack",
+				"Package Control: Install Package"
+			],
+			[
+				"packe",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 449.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+			"import urllib.request,os; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); open(os.path.join(ipp, pf), 'wb').write(urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ','%20')).read())"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/sbf/Developer/Web/Portfolio/index.html",
+		"/Users/sbf/Developer/Javascript/Node.js/ZetaServerExample/organized/server.js",
+		"/Users/sbf/Developer/Javascript/Node.js/ZetaServerExample/organized/postHandler.js",
+		"/Users/sbf/Developer/Javascript/Node.js/ZetaServerExample/organized/requestHandlers.js",
+		"/Users/sbf/Developer/Javascript/Node.js/ZetaServerExample/organized/router.js",
+		"/Users/sbf/Developer/Javascript/Node.js/ZetaServerExample/organized/index.js",
+		"/Users/sbf/Developer/Javascript/Node.js/ZetaServerExample/zeta_server.js",
+		"/Users/sbf/Library/Application Support/Sublime Text 3/Packages/SublimeCodeIntel/SublimeCodeIntel.sublime-settings",
+		"/Users/sbf/Developer/Javascript/Node.js/ZetaServerExample/index.js",
+		"/Users/sbf/Developer/Javascript/Node.js/ZetaServerExample/server.js",
+		"/Users/sbf/Developer/Javascript/Node.js/ZetaServerExample/postHandler.js",
+		"/Users/sbf/Developer/Javascript/Node.js/ZetaServerExample/router.js",
+		"/Users/sbf/Developer/Javascript/Node.js/ZetaServerExample/requestHandlers.js",
+		"/Users/sbf/Developer/Javascript/Node.js/nodejs.sublime-project",
+		"/Users/sbf/Dropbox/Pervasive/Context Awareness/README_missing.txt",
+		"/Users/sbf/Developer/Javascript/Node.js/zeta_server.js",
+		"/Users/sbf/Developer/CWP/CWP2/e5/js/chat_server.js",
+		"/Users/sbf/Dropbox/Pervasive/CWP/CWP2/e5/chat.html"
+	],
+	"find":
+	{
+		"height": 23.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"res",
+			"req",
+			"name"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"response",
+			"request"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"project": "blogdesign_v2.sublime-project",
+	"replace":
+	{
+		"height": 42.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"",
+				"~/Developer/CWP/CWP2/e5/js/chat_server.js"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 150.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
