@@ -25,10 +25,17 @@
 		</section>
 
 		<section id="content_area">
-			<div id="content_wrapper" class="container_16">
-				<div id="about" class="content_section">
-					<h1 class="grid_10"><span class="obj-c">[Site greetVisitor];</span><br />Who's there?...<br />Well, whoever you are... Welcome! I'm Søren, and this is my portfolio.</h1>
-					<div id="welcome_img" class="grid_5"></div>
+			<!--Sections are made of: div.wrapper holding a div.container_16.content_section.clearfix-->
+			<div class="wrapper">
+				<div id="about" class="container_16 content_section clearfix">
+					<h1 class="grid_10"><span class="obj-c">[<span class="class">self</span> <span class="function">greetVisitor</span>];</span><br />Who's there?...<br />Well, whoever you are... Welcome! I'm Søren, and this is my portfolio.</h1>
+					<div id="welcome_img" class="grid_5 push_1"></div>
+				</div>
+			</div>
+
+			<div class="wrapper">
+				<div id="portfolio" class="container_16 content_section clearfix">
+					<h1><span class="obj-c grid_16"><span id="first_codesection_pf"><span class="class">self</span>.<span class="property_or_self-defined">portfolio</span> = [<span class="property_or_self-defined">PortfolioFetcher</span> <span class="function">getPortfolioFor</span>:<span class="string">@"Søren"</span></span><span id="second_codesection_pf"> <span class="function">withLayout</span>:<span class="parameter">portfolioLayoutDefault</span>];</span></span></h1>
 				</div>
 			</div>
 		</section>

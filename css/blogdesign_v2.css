@@ -20,8 +20,6 @@ section#nav_scrollbar div#scroll_track {
   position: fixed;
   top: 5%;
   left: 70px;
-  /*Rounded corners*/
-
   -moz-border-radius: 5px;
   border-radius: 5px;
 }
@@ -38,21 +36,52 @@ section#content_area {
   width: 100%;
   left: 150px;
 }
+section#content_area h1 {
+  font-size: 50px;
+  font-family: 'Lato', 'Trebuchet MS', 'Sans serif';
+}
+section#content_area .wrapper {
+  border-bottom: 6px dashed #bdc3c7;
+}
 section#content_area .obj-c {
-  color: #95a5a6;
+  color: #000;
   font-size: 20px;
   font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
 }
+section#content_area .obj-c #first_codesection_pf {
+  display: block;
+}
+section#content_area .obj-c #second_codesection_pf {
+  display: block;
+  text-indent: 480px;
+}
+section#content_area .obj-c .class {
+  color: #e349a0;
+}
+section#content_area .obj-c .property_or_self-defined {
+  color: #77abab;
+}
+section#content_area .obj-c .function {
+  color: #556464;
+}
+section#content_area .obj-c .string {
+  color: #e74c3c;
+}
+section#content_area .obj-c .parameter {
+  color: #9b59b6;
+}
 section#content_area .content_section {
-  margin-top: 200px;
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+section#content_area #about {
+  margin-top: 100px;
 }
 section#content_area #about h1 {
   color: #16a085;
-  font-size: 50px;
-  font-family: 'Lato', 'Sans serif';
   text-align: justify;
 }
 section#content_area #about #welcome_img {
   height: 300px;
-  background: #95a5a6;
+  background: #bdc3c7;
 }
