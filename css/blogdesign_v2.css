@@ -127,11 +127,13 @@ body {
   border: #16a085 solid 6px;
   padding: 32px 20px;
   z-index: 200;
+  cursor: pointer;
 }
 #content_area #prevWork #work_timeline_scroller span {
   width: 65px;
   font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
   font-size: 20px;
+  cursor: pointer;
 }
 #content_area #prevWork #work_timeline_scroller.active {
   border-style: double;
