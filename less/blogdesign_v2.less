@@ -5,6 +5,10 @@
 @red: #e74c3c;
 @pink: #e349a0;
 
+@code_font: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
+
+@scrollbar_width: 150px;
+
 body, html {
 	height:100%;
 }
@@ -15,12 +19,13 @@ body {
 	font-size: 50px;
 }
 
-section#nav_scrollbar {
-	width: 150px; height: 100%;
+#nav_scrollbar {
+	width: @scrollbar_width; height: 100%;
 	background: @green;
 	position: fixed;
+	z-index: 100;
 
-	div#scroll_track {
+	#scroll_track {
 		background: @white;
 		width: 10px; height: 90%; 
 		position: fixed; top: 5%; left: 70px;
@@ -28,17 +33,28 @@ section#nav_scrollbar {
 		border-radius: 5px;
 	}
 
-	div#scrolling_nav {
-		width: 150px; height: 150px;
-		background: @green;
+	#scrolling_nav_wrapper {
 		position: fixed;
+
+		#scrolling_nav {
+			width: @scrollbar_width; height: @scrollbar_width;
+			background: @green;
+		}
+
+		#scrolling_page_description {
+			-webkit-transform:rotate(90deg);
+			position: relative; top: -40px; left: 104px;
+			font-family: @code_font;
+			font-size: 25px;
+			color: @green;
+		}
 	}
 }
 
-section#content_area {
+#content_area {
 	position: absolute; left: 0; top: 0;
 	width: 100%;
-	left: 150px;
+	left: @scrollbar_width;
 
 	h1 {
 		font-size: 50px;
@@ -52,7 +68,7 @@ section#content_area {
 	.obj-c {
 		color: #000;
 		font-size: 20px;
-    	font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
+    	font-family: @code_font;
 
     	#first_codesection_pf {
 			display: block;
@@ -88,12 +104,12 @@ section#content_area {
 		padding-bottom: 100px;
 	}
 
-	#about_wrapper {
+	#header_wrapper {
 		background: @green;
 		border-bottom: none;
 	}
 
-	#about {
+	#header {
 		padding-top: 100px;
 
 		h1 {
@@ -128,6 +144,22 @@ section#content_area {
 			background: #bdc3c7;
 			float: left;
 			margin: 75px 70px;
+		}
+
+		#work_timeline_scroller {
+			position: absolute;
+			background: @white;
+			-moz-border-radius: 56px;
+			border-radius: 56px;
+			border:@green solid 6px;
+			padding: 32px 20px;
+			z-index: 200;
+
+			span {
+				width: 65px;
+				font-family: @code_font;
+				font-size: 20px;
+			}
 		}
 	}
 }

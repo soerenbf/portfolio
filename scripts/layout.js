@@ -57,5 +57,5 @@ var scrollNav = function() {
 	var pageScrollMax = $('#content_area').height() - $('body').height();
 	var amountScrolled = (1 - (pageScrollMax - window.pageYOffset) / pageScrollMax);
 
-	$('#scrolling_nav').css('top', ($('body').height() - $('#scrolling_nav').height()) * amountScrolled);
+	$('#scrolling_nav_wrapper').css('top', ($('body').height() - $('#scrolling_nav_wrapper').height()) * amountScrolled);
 }
