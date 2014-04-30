@@ -1,20 +1,27 @@
+@white: #ecf0f1;
+@green: #16a085;
+@black_trans: rgba(0, 0, 0, 0.3);
+@grey: #bdc3c7;
+@red: #e74c3c;
+@pink: #e349a0;
+
 body, html {
 	height:100%;
 }
 
 body {
-	background: #ecf0f1;
-	color: #16a085;
+	background: @white;
+	color: @green;
 	font-size: 50px;
 }
 
 section#nav_scrollbar {
 	width: 150px; height: 100%;
-	background: #16a085;
+	background: @green;
 	position: fixed;
 
 	div#scroll_track {
-		background: #bdc3c7;
+		background: @white;
 		width: 10px; height: 90%; 
 		position: fixed; top: 5%; left: 70px;
 		-moz-border-radius: 5px;
@@ -23,7 +30,7 @@ section#nav_scrollbar {
 
 	div#scrolling_nav {
 		width: 150px; height: 150px;
-		background: #ecf0f1;
+		background: @green;
 		position: fixed;
 	}
 }
@@ -39,7 +46,7 @@ section#content_area {
 	}
 
 	.wrapper {
-		border-bottom: 6px dashed #bdc3c7;
+		border-bottom: 6px dashed @black_trans;
 	}
 
 	.obj-c {
@@ -57,7 +64,7 @@ section#content_area {
     	}
 
     	.class {
-			color: #e349a0;
+			color: @pink;
     	}
 
     	.property_or_self-defined {
@@ -81,11 +88,16 @@ section#content_area {
 		padding-bottom: 100px;
 	}
 
+	#about_wrapper {
+		background: @green;
+		border-bottom: none;
+	}
+
 	#about {
-		margin-top: 100px;
+		padding-top: 100px;
 
 		h1 {
-			color: #16a085;
+			color: @white;
 			text-align: justify;
 		}
 
@@ -103,11 +115,11 @@ section#content_area {
 		}
 
 		#prevWork_items_upper {
-			border-bottom: #e74c3c solid 3px;
+			border-bottom: @green solid 3px;
 		}
 
 		#prevWork_items_lower_wrapper {
-			border-top: #e74c3c solid 3px;
+			border-top: @green solid 3px;
 			margin-bottom: 100px;
 		}
 

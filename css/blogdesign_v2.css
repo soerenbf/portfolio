@@ -14,7 +14,7 @@ section#nav_scrollbar {
   position: fixed;
 }
 section#nav_scrollbar div#scroll_track {
-  background: #bdc3c7;
+  background: #ecf0f1;
   width: 10px;
   height: 90%;
   position: fixed;
@@ -26,7 +26,7 @@ section#nav_scrollbar div#scroll_track {
 section#nav_scrollbar div#scrolling_nav {
   width: 150px;
   height: 150px;
-  background: #ecf0f1;
+  background: #16a085;
   position: fixed;
 }
 section#content_area {
@@ -41,7 +41,7 @@ section#content_area h1 {
   font-family: 'Lato', 'Trebuchet MS', 'Sans serif';
 }
 section#content_area .wrapper {
-  border-bottom: 6px dashed #bdc3c7;
+  border-bottom: 6px dashed rgba(0, 0, 0, 0.3);
 }
 section#content_area .obj-c {
   color: #000;
@@ -74,11 +74,15 @@ section#content_area .content_section {
   padding-top: 100px;
   padding-bottom: 100px;
 }
+section#content_area #about_wrapper {
+  background: #16a085;
+  border-bottom: none;
+}
 section#content_area #about {
-  margin-top: 100px;
+  padding-top: 100px;
 }
 section#content_area #about h1 {
-  color: #16a085;
+  color: #ecf0f1;
   text-align: justify;
 }
 section#content_area #about #welcome_img {
@@ -90,10 +94,10 @@ section#content_area #prevWork #prevWork_header {
   margin-bottom: 0px;
 }
 section#content_area #prevWork #prevWork_items_upper {
-  border-bottom: #e74c3c solid 3px;
+  border-bottom: #16a085 solid 3px;
 }
 section#content_area #prevWork #prevWork_items_lower_wrapper {
-  border-top: #e74c3c solid 3px;
+  border-top: #16a085 solid 3px;
   margin-bottom: 100px;
 }
 section#content_area #prevWork .prevWork_item {
