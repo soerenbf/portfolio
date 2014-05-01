@@ -1,7 +1,11 @@
 var LayoutManager = (function() {
 	return function(workArray) {
 
-		var init = function() {
+		function init() {
+			layoutPrevWorkItems();
+		}
+
+		var layoutPrevWorkItems = function() {
 			//Lay out the prevWork_item elements using the 'zig-zag' layout.
 			var pwUpper = $('div#prevWork_items_upper');
 			var pwLower = $('div#prevWork_items_lower');
@@ -17,9 +21,6 @@ var LayoutManager = (function() {
 			};
 
 			resizeElements($(window).width() - $('#nav_scrollbar').width());
-
-			//At last, set the functions to export.
-			this.resizeElements = resizeElements;
 		}
 		
 		var resizeElements = function(elWidth) {
@@ -34,5 +35,8 @@ var LayoutManager = (function() {
 		}
 
 		init();
+
+		//Exports
+		this.resizeElements = resizeElements;
 	}
 })();
