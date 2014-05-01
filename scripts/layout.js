@@ -37,7 +37,7 @@ var layoutPrevWorkItems = function() {
 	var pwLower = $('div#prevWork_items_lower');
 
 	//Get portfolio data form database.
-	data = [1, 2, 3, 4];
+	data = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
 
 	for (var i = 0; i < data.length; i++) {
 		//Depending on 'i', add a new div.prevWork_item to either pwUpper or pwLower.
