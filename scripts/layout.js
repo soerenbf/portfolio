@@ -9,16 +9,13 @@ $(document).ready(function() {
 	var workItems = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
 
 	//Init.
-	//layoutPrevWorkItems();
-	var layoutManager = new LayoutManager(); //LayoutManager.js
-	layoutManager.layoutPrevWorkItems(workItems);
+	var layoutManager = new LayoutManager(workItems); //LayoutManager.js
+	var scrollManager = new ScrollManager();
 
 	$(window).on('resize', function(event) {
-		layoutManager.handleResize();
-		scrollNav();
-	}).on('scroll', function() {
-		scrollNav();
-	});
+		layoutManager.resizeElements($(window).width() - $('#nav_scrollbar').width());
+		scrollManager.scrollNav();
+	}).on('scroll', scrollManager.handleScroll);
 });
 
 //Scrolling
