@@ -5,7 +5,7 @@
 @red: #e74c3c;
 @pink: #e349a0;
 
-@code_font: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
+@code_font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
 
 @scrollbar_width: 150px;
 
@@ -44,7 +44,7 @@ body {
 		#scrolling_page_description {
 			-webkit-transform:rotate(90deg);
 			position: relative; top: -40px; left: 104px;
-			font-family: @code_font;
+			font-family: @code_font-family;
 			font-size: 25px;
 			color: @green;
 		}
@@ -68,7 +68,7 @@ body {
 	.obj-c {
 		color: #000;
 		font-size: 20px;
-    	font-family: @code_font;
+    	font-family: @code_font-family;
 
     	#first_codesection_pf {
 			display: block;
@@ -163,7 +163,7 @@ body {
 
 			span {
 				width: 65px;
-				font-family: @code_font;
+				font-family: @code_font-family;
 				font-size: 20px;
 				cursor: pointer;
 			}

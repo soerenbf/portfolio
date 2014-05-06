@@ -5,15 +5,12 @@ $(document).ready(function() {
 
 	//Init.
 	var layoutManager = new LayoutManager(workItems); //LayoutManager.js
-	var workScroller = new WorkScroller(); //WorkScroller.js
-	var scrollManager = new ScrollManager(workScroller); //ScrollManager.js
-
-	scrollManager.printTest();
+	var scrollManager = new ScrollManager(); //ScrollManager.js
 
 	$(window).on('resize', function(event) {
 		layoutManager.resizeElements($(window).width() - $('#nav_scrollbar').width());
 		scrollManager.scrollNav();
 	}).on('scroll', function(event) {
-		scrollManager.handleScroll();
+		scrollManager.handleScroll(event);
 	});
 });

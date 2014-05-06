@@ -1,24 +1,32 @@
 var WorkScroller = (function(scroller) {
-	return function() {
-		var clicks;
+	return function(callback) {
+		var clicks = 0;
+		var scrollCallback = callback;
+		var startPos = $('#work_timeline_scroller').position().left;
+
+		var scrollDisabler;
 
 		function init() {
-			workScrollerClicks = 0;
 			bindClickHandler();
+			scrollDisabler = new ScrollDisabler(scrollCallback);
 		}
 
 		var getClicks = function() {
 			return clicks;
 		}
 
+		var getStartPos = function() {
+			return startPos;
+		}
+
 		var bindClickHandler = function() {
 			scroller.on('click', function() {
 				if ($(this).hasClass('active')) {
 					$(this).removeClass('active');
-					$('body').css('overflow', 'auto');
+					scrollDisabler.enableScrolling();
 				} else {
 					$(this).addClass('active');
-					$('body').css('overflow', 'hidden');
+					scrollDisabler.disableScrolling();
 				};
 
 				clicks++;
@@ -29,5 +37,6 @@ var WorkScroller = (function(scroller) {
 
 		//Exports.
 		this.getClicks = getClicks;
+		this.getStartPos = getStartPos;
 	}
 })($('#work_timeline_scroller'));

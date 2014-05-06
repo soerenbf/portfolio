@@ -1,47 +1,51 @@
-var ScrollManager = (function(x, y) {
-	return function(workScroller) {
+var ScrollManager = (function(x, y, scrollingNav, prevWork, workScrollerEl) {
+	return function() {
 
-		var showSignOffset;
-		var showSignInterval;
+		var showSignOffset = 1000;
+		var showSignInterval = 200;
+		
+		var workScroller;
 
 		var init = function() {
-			showSignOffset = 1000;
-			showSignInterval = 200;
+			workScroller = new WorkScroller(handleWorkScroll);
 		}
 
-		var handleScroll = function() {
+		var handleScroll = function(scrollEvent) {
 			scrollNav();
-			toggleSign();
-			if (workScroller.getClicks() % 2 !== 0) { //It's been clicked an uneven number of times; it's active.
-				scrollWorkScroller();
-			}
-			
+			toggleSign(y > showSignOffset && y < showSignOffset + showSignInterval && workScroller.getClicks() === 0);
 		}
 
 		var scrollNav = function() {
 			var pageScrollMax = $('#content_area').height() - $('body').height();
 			var amountScrolled = (1 - (pageScrollMax - window.pageYOffset) / pageScrollMax);
 
-			$('#scrolling_nav_wrapper').css('top', ($('body').height() - $('#scrolling_nav_wrapper').height()) * amountScrolled);
+			scrollingNav.css('top', ($('body').height() - scrollingNav.height()) * amountScrolled);
 		}
 
-		var toggleSign = function() {
-			if (y > showSignOffset && y < showSignOffset + showSignInterval && workScroller.getClicks() < 2) {
-				switch(workScrollerClicked) {
-					case 0 : //Show "click to activate" hint.
-						break;
-					case 1 : //Show the "scroll to see more" hint.
-						break;
-				}
+		var toggleSign = function(shouldToggle) {
+			if (shouldToggle) {
+				//Show the sign telling the user to click the work scroller.
 			}
 		}
 
-		var scrollWorkScroller = function() {
-			
+		var handleWorkScroll = function(event) {
+			//Calculate how much to scroll the prevWork area.
+			var scrollSpeed = 10;
+			var scrollValue = event.originalEvent.wheelDelta >= 0 ? scrollSpeed : -scrollSpeed;
+
+			if (prevWork.position().left + scrollValue >= (prevWork.width() - $(window).width() + 150) * -1 && prevWork.position().left + scrollValue <= 0) {
+				scrollWork(prevWork.position().left + scrollValue);
+			}
 		}
 
-		var printTest = function() {
-			console.log(1);
+		var scrollWork = function(newPos) {
+			//Scroll prevWork.
+			prevWork.css('left', newPos);
+
+			//Scroll workScroller accordingly.
+			var scrollSpan = prevWork.width() - $(window).width() + 150;
+
+			//workScrollerEl.css('left', workScrollerEl.position().left + ((newPos - scrollSpan)/scrollSpan) * $('#content_area').width()); //FIGURE THIS OUT!
 		}
 
 		init();
@@ -49,6 +53,5 @@ var ScrollManager = (function(x, y) {
 		//Exports.
 		this.handleScroll = handleScroll;
 		this.scrollNav = scrollNav;
-		this.printTest = printTest;
 	}
-})(window.pageXOffset, window.pageYOffset);
+})(window.pageXOffset, window.pageYOffset, $('#scrolling_nav_wrapper'), $('#prevWork_wrapper'), $('#work_timeline_scroller'));
