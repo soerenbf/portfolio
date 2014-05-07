@@ -17,9 +17,9 @@ var ScrollManager = (function(x, y, scrollingNav, prevWork, workScrollerEl) {
 
 		var scrollNav = function() {
 			var pageScrollMax = $('#content_area').height() - $('body').height();
-			var amountScrolled = (1 - (pageScrollMax - window.pageYOffset) / pageScrollMax);
+			var pageAmountScrolled = 1 - (pageScrollMax - window.pageYOffset) / pageScrollMax;
 
-			scrollingNav.css('top', ($('body').height() - scrollingNav.height()) * amountScrolled);
+			scrollingNav.css('top', ($('body').height() - scrollingNav.height()) * pageAmountScrolled);
 		}
 
 		var toggleSign = function(shouldToggle) {
@@ -28,7 +28,7 @@ var ScrollManager = (function(x, y, scrollingNav, prevWork, workScrollerEl) {
 			}
 		}
 
-		var handleWorkScroll = function(event) {
+		var handleWorkScroll = function(event) { //Sent to workScroller -> workScroller.scrollDisabler as a callback.
 			//Calculate how much to scroll the prevWork area.
 			var scrollSpeed = 10;
 			var scrollValue = event.originalEvent.wheelDelta >= 0 ? scrollSpeed : -scrollSpeed;
@@ -43,9 +43,10 @@ var ScrollManager = (function(x, y, scrollingNav, prevWork, workScrollerEl) {
 			prevWork.css('left', newPos);
 
 			//Scroll workScroller accordingly.
-			var scrollSpan = prevWork.width() - $(window).width() + 150;
+			var workScrollMax = prevWork.width() - $(window).width() + 150;
+			var workAmountScrolled = 1 - (newPos + workScrollMax) / workScrollMax;
 
-			//workScrollerEl.css('left', workScrollerEl.position().left + ((newPos - scrollSpan)/scrollSpan) * $('#content_area').width()); //FIGURE THIS OUT!
+			workScrollerEl.css('left', workScroller.getStartPos() + workAmountScrolled * $('#content_area').width());
 		}
 
 		init();
