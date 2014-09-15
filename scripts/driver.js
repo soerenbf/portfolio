@@ -6,6 +6,7 @@ $(document).ready(function() {
 	//Init.
 	var layoutManager = new LayoutManager(workItems); //LayoutManager.js
 	var scrollManager = new ScrollManager(); //ScrollManager.js
+	var ajaxComm = new AjaxCommunicator('/blog_backend/index.php');
 
 	$(window).on('resize', function(event) {
 		layoutManager.resizeElements($(window).width() - $('#nav_scrollbar').width());
@@ -13,4 +14,7 @@ $(document).ready(function() {
 	}).on('scroll', function(event) {
 		scrollManager.handleScroll(event);
 	});
+
+	//Tests:
+	ajaxComm.getData();
 });
