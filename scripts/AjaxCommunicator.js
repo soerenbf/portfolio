@@ -7,8 +7,19 @@ var AjaxCommunicator = (function(AjaxRequest) {
 			ajaxReq.onreadystatechange = handleResponse;
 		}
 
-		var getData = function() {
-			ajaxReq.open('GET', backendUrl, true);
+		var getPortfolio = function() {
+
+			var url = backendUrl;
+
+			ajaxReq.open('GET', url, true);
+			ajaxReq.send();
+		}
+
+		var getPortfolioPostById = function(postId) {
+
+			var url = backendUrl + '/getPost?id=' + postId;
+
+			ajaxReq.open('GET', url, true);
 			ajaxReq.send();
 		}
 
@@ -21,7 +32,7 @@ var AjaxCommunicator = (function(AjaxRequest) {
 		init();
 
 		//Exports.
-		this.getData = getData;
+		this.getPortfolio = getPortfolio;
 
 	}
 })(window.XMLHttpRequest);

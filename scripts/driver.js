@@ -16,5 +16,5 @@ $(document).ready(function() {
 	});
 
 	//Tests:
-	ajaxComm.getData();
+	ajaxComm.getPortfolio();
 });
