@@ -27,22 +27,16 @@ var AjaxCommunicator = (function(AjaxRequest) {
 
 		var handleResponse = function() {
 			if (ajaxReq.readyState == 4 && ajaxReq.status == 200) {
-				//console.log('Response: ' + ajaxReq.responseText);
 
-				responseCallback(parseObjectToArray(ajaxReq.responseText));
-				//console.log('Parsed response: ' + parseObjectToArray(ajaxReq.responseText))
+				responseCallback(parseObjectToArray(JSON.parse(ajaxReq.responseText)));
 			}
 		}
 
-		var parseObjectToArray = function(ajaxResponse) {
-			var obj = JSON.parse(ajaxResponse);
-
+		var parseObjectToArray = function(ajaxResponseObj) {
 			var newArray = [];
-			for (var key in obj) {
-			    newArray.push(obj[key]);
+			for (var key in ajaxResponseObj) {
+			    newArray.push(ajaxResponseObj[key]);
 			}
-
-			console.log('Size of array: ' + newArray.length);
 
 			return newArray;
 		}
