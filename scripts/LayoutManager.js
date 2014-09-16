@@ -1,24 +1,25 @@
 var LayoutManager = (function() {
-	return function(workArray) {
+	return function() {
 
-		function init() {
-			layoutPrevWorkItems();
-		}
+		var workArray;
 
-		var layoutPrevWorkItems = function() {
+		var layoutPortfolio = function(workItems) {
 			//Lay out the prevWork_item elements using the 'zig-zag' layout.
 			var pwUpper = $('div#prevWork_items_upper');
 			var pwLower = $('div#prevWork_items_lower');
 
-			for (var i = 0; i < workArray.length; i++) {
+			for (var i = 0; i < workItems.length; i++) {
 				//Depending on 'i', add a new div.prevWork_item to either pwUpper or pwLower.
 				var pwItem = document.createElement('div');
 				var parent = i % 2 === 0 ? pwUpper : pwLower;
 				
 				$(pwItem).addClass('prevWork_item')
 					.appendTo(parent);
-					//Fill in data from workArray.
+					//Fill in data from workItems.
+				console.log(workItems[i]);
 			};
+
+			workArray = workItems;
 
 			resizeElements($(window).width() - $('#nav_scrollbar').width());
 		}
@@ -34,9 +35,8 @@ var LayoutManager = (function() {
 			$('div#prevWork_wrapper').width(dataWidth > contentWidth ? dataWidth : contentWidth);
 		}
 
-		init();
-
 		//Exports
+		this.layoutPortfolio = layoutPortfolio;
 		this.resizeElements = resizeElements;
 	}
 })();

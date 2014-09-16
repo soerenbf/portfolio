@@ -1,15 +1,17 @@
 var AjaxCommunicator = (function(AjaxRequest) {
-	return function(backendUrl) {
+	return function(backendUrl, responseCallback) {
 
-		var ajaxReq = new AjaxRequest();
+		var ajaxReq;
 
 		var init = function() {
+			ajaxReq = new AjaxRequest();
+
 			ajaxReq.onreadystatechange = handleResponse;
 		}
 
 		var getPortfolio = function() {
 
-			var url = backendUrl;
+			var url = backendUrl + '/getPortfolioPosts';
 
 			ajaxReq.open('GET', url, true);
 			ajaxReq.send();
@@ -17,7 +19,7 @@ var AjaxCommunicator = (function(AjaxRequest) {
 
 		var getPortfolioPostById = function(postId) {
 
-			var url = backendUrl + '/getPost?id=' + postId;
+			var url = backendUrl + '/getPortfolioPost?id=' + postId;
 
 			ajaxReq.open('GET', url, true);
 			ajaxReq.send();
@@ -25,14 +27,29 @@ var AjaxCommunicator = (function(AjaxRequest) {
 
 		var handleResponse = function() {
 			if (ajaxReq.readyState == 4 && ajaxReq.status == 200) {
-				console.log(ajaxReq.responseText);
+				console.log('Response: ' + ajaxReq.responseText);
+
+				responseCallback(parseObjectToArray(ajaxReq.responseText));
+				//console.log('Parsed response: ' + parseObjectToArray(ajaxReq.responseText))
 			}
+		}
+
+		var parseObjectToArray = function(ajaxResponse) {
+			var obj = JSON.parse(ajaxResponse);
+
+			var newArray = []
+			for (var key in obj) {
+			    newArray[key] = obj[key];
+			}
+
+			return newArray;
 		}
 
 		init();
 
 		//Exports.
 		this.getPortfolio = getPortfolio;
+		this.getPortfolioPostById = getPortfolioPostById;
 
 	}
 })(window.XMLHttpRequest);
