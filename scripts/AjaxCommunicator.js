@@ -27,7 +27,7 @@ var AjaxCommunicator = (function(AjaxRequest) {
 
 		var handleResponse = function() {
 			if (ajaxReq.readyState == 4 && ajaxReq.status == 200) {
-				console.log('Response: ' + ajaxReq.responseText);
+				//console.log('Response: ' + ajaxReq.responseText);
 
 				responseCallback(parseObjectToArray(ajaxReq.responseText));
 				//console.log('Parsed response: ' + parseObjectToArray(ajaxReq.responseText))
@@ -37,10 +37,12 @@ var AjaxCommunicator = (function(AjaxRequest) {
 		var parseObjectToArray = function(ajaxResponse) {
 			var obj = JSON.parse(ajaxResponse);
 
-			var newArray = []
+			var newArray = [];
 			for (var key in obj) {
-			    newArray[key] = obj[key];
+			    newArray.push(obj[key]);
 			}
+
+			console.log('Size of array: ' + newArray.length);
 
 			return newArray;
 		}
