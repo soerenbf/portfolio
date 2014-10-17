@@ -19,9 +19,17 @@ body {
 	font-size: 50px;
 }
 
+#background {
+
+	.header {
+		background: @green;
+		width: 100%;
+	}
+}
+
 #nav_scroll_bar {
 	width: @scroll_bar_width; height: 100%;
-	position: fixed;
+	position: fixed; top:0px;
 	z-index: 100;
 
 	.scroll_bar_bg {
@@ -37,18 +45,10 @@ body {
 		border-radius: 5px;
 	}
 
-	#scroll_bar_bg_green {
+	#scroll_bar_border {
 		background: @green;
-	}
-
-	#scroll_bar_bg_white {
-		background: @white;
-
-		#scroll_bar_bg_white_border {
-			background: @green;
-			width: 6px; height:100%;
-			position:absolute; right: 0px;
-		}
+		width: 6px; height:100%;
+		position:absolute; right: 0px;
 	}
 
 	#scrolling_nav_wrapper {

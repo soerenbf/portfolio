@@ -38,7 +38,7 @@ var LayoutManager = (function() {
 			$('#scroll_bar_bg_white').css('top', $(window).height());
 
 			//Resize #header_wrapper to match the screen size.
-			$('div#header_wrapper').height($(window).height());
+			$('.header').height($(window).height());
 
 			//Position the #work_timeline_scroller correctly. Position:absolute.
 			$('#work_timeline_scroller').css('top', $('div#header_wrapper').height() + ($('div#prev_work').height() / 2) - ($('div#prev_work_header').height() / 2)); //Position it in the middle of #prev_work_items_wrapper.

@@ -7,10 +7,15 @@ body {
   color: #16a085;
   font-size: 50px;
 }
+#background .header {
+  background: #16a085;
+  width: 100%;
+}
 #nav_scroll_bar {
   width: 150px;
   height: 100%;
   position: fixed;
+  top: 0px;
   z-index: 100;
 }
 #nav_scroll_bar .scroll_bar_bg {
@@ -29,13 +34,7 @@ body {
   -moz-border-radius: 5px;
   border-radius: 5px;
 }
-#nav_scroll_bar #scroll_bar_bg_green {
-  background: #16a085;
-}
-#nav_scroll_bar #scroll_bar_bg_white {
-  background: #ecf0f1;
-}
-#nav_scroll_bar #scroll_bar_bg_white #scroll_bar_bg_white_border {
+#nav_scroll_bar #scroll_bar_border {
   background: #16a085;
   width: 6px;
   height: 100%;
