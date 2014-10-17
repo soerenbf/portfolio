@@ -1,8 +1,10 @@
-var WorkScroller = (function(scroller) {
+var WorkScroller = (function(scroller, prevWork) {
 	return function(callback) {
+
 		var clicks = 0;
+		var scrollSpeed = 10;
 		var scrollCallback = callback;
-		var startPos = $('#work_timeline_scroller').position().left;
+		var startPos = scroller.position().left;
 
 		var scrollDisabler;
 
@@ -13,10 +15,6 @@ var WorkScroller = (function(scroller) {
 
 		var getClicks = function() {
 			return clicks;
-		}
-
-		var getStartPos = function() {
-			return startPos;
 		}
 
 		var bindClickHandler = function() {
@@ -33,10 +31,28 @@ var WorkScroller = (function(scroller) {
 			});
 		}
 
+		var scrollTo = function(forward) {
+
+			var scrollValue = forward ? scrollSpeed : -scrollSpeed;
+
+			if (prevWork.position().left + scrollValue >= (prevWork.width() - $(window).width() + 150) * -1 && prevWork.position().left + scrollValue <= 0) {
+				//Scroll prev_work.
+				newPos = prevWork.position().left + (forward ? scrollSpeed : -scrollSpeed);
+				prevWork.css('left', newPos);
+
+				//Scroll workScroller accordingly.
+				var workScrollMax = prevWork.width() - $(window).width() + 150;
+				var workAmountScrolled = 1 - (newPos + workScrollMax) / workScrollMax;
+
+				scroller.css('left', startPos + workAmountScrolled * $('#content_area').width());
+			}
+
+		}
+
 		init();
 
 		//Exports.
 		this.getClicks = getClicks;
-		this.getStartPos = getStartPos;
+		this.scrollTo = scrollTo;
 	}
-})($('#work_timeline_scroller'));
+})($('#work_timeline_scroller'), $('#prev_work_items_wrapper'));

@@ -27,7 +27,7 @@ body {
 
 	#scroll_track {
 		background: @white;
-		width: 10px; height: 90%; 
+		width: 10px; height: 90%;
 		position: fixed; top: 5%; left: 70px;
 		-moz-border-radius: 5px;
 		border-radius: 5px;
@@ -110,7 +110,10 @@ body {
 	}
 
 	#header {
-		padding-top: 100px;
+
+		position:relative;
+		top: 50%;
+		transform: translateY(-50%);
 
 		h1 {
 			color: @white;
@@ -123,27 +126,27 @@ body {
 		}
 	}
 
-	#prevWork {
+	#prev_work {
 		overflow: hidden;
 
-		#prevWork_header {
+		#prev_work_header {
 			margin-top: 100px;
 			margin-bottom: 0px;
 		}
 
-		#prevWork_wrapper {
+		#prev_work_items_wrapper {
 			position: relative;
 
-			#prevWork_items_upper {
+			#prev_work_items_upper {
 				border-bottom: @green solid 3px;
 			}
 
-			#prevWork_items_lower_wrapper {
+			#prev_work_items_lower_wrapper {
 				border-top: @green solid 3px;
 				margin-bottom: 100px;
 			}
 
-			.prevWork_item {
+			.prev_work_item {
 				width: 500px; height: 350px;
 				background: #bdc3c7;
 				float: left;
