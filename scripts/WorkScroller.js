@@ -4,13 +4,15 @@ var WorkScroller = (function(scroller, prevWork) {
 		var clicks = 0;
 		var scrollSpeed = 10;
 		var scrollCallback = callback;
-		var startPos = scroller.position().left;
+		var startPos = -50;
 
 		var scrollDisabler;
 
 		function init() {
 			bindClickHandler();
 			scrollDisabler = new ScrollDisabler(scrollCallback);
+
+			scroller.css('left', startPos);
 		}
 
 		var getClicks = function() {
