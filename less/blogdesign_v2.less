@@ -7,7 +7,7 @@
 
 @code_font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
 
-@scrollbar_width: 150px;
+@scroll_bar_width: 150px;
 
 body, html {
 	height:100%;
@@ -19,25 +19,44 @@ body {
 	font-size: 50px;
 }
 
-#nav_scrollbar {
-	width: @scrollbar_width; height: 100%;
-	background: @green;
+#nav_scroll_bar {
+	width: @scroll_bar_width; height: 100%;
 	position: fixed;
 	z-index: 100;
 
+	.scroll_bar_bg {
+		width: 100%; height:100%;
+		position: absolute; top: 0;
+	}
+
 	#scroll_track {
-		background: @white;
+		background: @black_trans;
 		width: 10px; height: 90%;
-		position: fixed; top: 5%; left: 70px;
+		position: relative; top: 5%; left: 70px;
 		-moz-border-radius: 5px;
 		border-radius: 5px;
 	}
 
+	#scroll_bar_bg_green {
+		background: @green;
+	}
+
+	#scroll_bar_bg_white {
+		background: @white;
+
+		#scroll_bar_bg_white_border {
+			background: @green;
+			width: 6px; height:100%;
+			position:absolute; right: 0px;
+		}
+	}
+
 	#scrolling_nav_wrapper {
 		position: fixed;
+		width: @scroll_bar_width; height: @scroll_bar_width;
 
 		#scrolling_nav {
-			width: @scrollbar_width; height: @scrollbar_width;
+			width: 100%; height: 100%;
 			background: @green;
 		}
 
@@ -54,7 +73,7 @@ body {
 #content_area {
 	position: absolute; left: 0; top: 0;
 	width: 100%;
-	left: @scrollbar_width;
+	left: @scroll_bar_width;
 
 	h1 {
 		font-size: 50px;

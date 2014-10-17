@@ -21,7 +21,7 @@ var LayoutManager = (function() {
 
 			workArray = workItems;
 
-			resizeElements($(window).width() - $('#nav_scrollbar').width());
+			resizeElements($(window).width() - $('#nav_scroll_bar').width());
 		}
 
 		var resizeElements = function(elWidth) {
@@ -31,8 +31,11 @@ var LayoutManager = (function() {
 
 			//Calculate width of div#prev_work_items_wrapper based on the amount of data. Every prev_work_item is 640px wide incl. margin. If the width does not exceed windowSize,
 			var dataWidth = 640 + ((workArray.length - 1) * 320);
-			var contentWidth = $(window).width() - $('#nav_scrollbar').width();
+			var contentWidth = $(window).width() - $('#nav_scroll_bar').width();
 			$('div#prev_work_items_wrapper').width(dataWidth > contentWidth ? dataWidth : contentWidth);
+
+			//Place the white background of #scroll_bar_nav at window.height().
+			$('#scroll_bar_bg_white').css('top', $(window).height());
 
 			//Resize #header_wrapper to match the screen size.
 			$('div#header_wrapper').height($(window).height());

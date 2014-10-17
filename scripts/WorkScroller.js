@@ -4,7 +4,7 @@ var WorkScroller = (function(scroller, prevWork) {
 		var clicks = 0;
 		var scrollSpeed = 10;
 		var scrollCallback = callback;
-		var startPos = -50;
+		var startPos = -53;
 
 		var scrollDisabler;
 
@@ -55,6 +55,6 @@ var WorkScroller = (function(scroller, prevWork) {
 
 		//Exports.
 		this.getClicks = getClicks;
-		this.scrollTo = scrollTo;
+		this.scrollDirection = scrollDirection;
 	}
 })($('#work_timeline_scroller'), $('#prev_work_items_wrapper'));
