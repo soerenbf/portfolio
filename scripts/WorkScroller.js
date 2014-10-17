@@ -31,7 +31,7 @@ var WorkScroller = (function(scroller, prevWork) {
 			});
 		}
 
-		var scrollTo = function(forward) {
+		var scrollDirection = function(forward) {
 
 			var scrollValue = forward ? scrollSpeed : -scrollSpeed;
 
