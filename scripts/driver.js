@@ -11,7 +11,7 @@ $(document).ready(function() {
 	ajaxComm.getPortfolio();
 
 	$(window).on('resize', function(event) {
-		layoutManager.layoutElements($(window).width());
+		layoutManager.layoutElements();
 		scrollManager.handleScroll();
 	}).on('scroll', function(event) {
 		scrollManager.handleScroll(event);

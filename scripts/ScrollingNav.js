@@ -7,6 +7,27 @@ var ScrollingNav = (function(scroller) {
       var pageAmountScrolled = 1 - (pageScrollMax - window.pageYOffset) / pageScrollMax;
 
       scroller.css('left', ($('body').width() - scroller.width()) * pageAmountScrolled);
+
+      positionBar();
+    }
+
+    var positionBar = function() {
+      var PageYOffsetFixBar = $(window).height() - $('#header').height() + 2 * $('#nav_scroll_bar').height();
+      var PageYOffsetPosTop = $(window).height() - $('#nav_scroll_bar').height();
+
+      if(window.pageYOffset >= PageYOffsetFixBar) {
+
+
+        if(window.pageYOffset >= PageYOffsetPosTop) {
+
+        }
+      } else if(window.pageYOffset < PageYOffsetFixBar) {
+        
+
+        if(window.pageYOffset < PageYOffsetPosTop) {
+
+        }
+      }
     }
 
     this.updateScroller = updateScroller;
