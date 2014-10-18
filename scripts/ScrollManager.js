@@ -15,6 +15,7 @@ var ScrollManager = (function(x, y, scrollingNav, prevWork, workScrollerEl) {
 		var handleScroll = function(scrollEvent) {
 			//Scroll the scrolling nav, scroll the header upwards slowly, and check if the sign to click workscroller should be shown.
 			scrollingNav.updateScroller();
+			updateHeader();
 			$('#header_wrapper').height($(window).height() - window.pageYOffset);
 			toggleSign(y > showSignOffset && y < showSignOffset + showSignInterval && workScroller.getClicks() === 0);
 		}
@@ -27,6 +28,37 @@ var ScrollManager = (function(x, y, scrollingNav, prevWork, workScrollerEl) {
 
 		var handleWorkScroll = function(event) { //Sent to workScroller -> workScroller.scrollDisabler as a callback.
 			workScroller.scrollDirection(event.deltaY);
+		}
+
+		var updateHeader = function() {
+			var PageYOffsetFixBar = $(window).height() - ($('#header').height() + 2 * $('#nav_scroll_bar').height());
+			var PageYOffsetPosTop = $(window).height() - $('#nav_scroll_bar').height();
+
+			if(window.pageYOffset >= PageYOffsetFixBar) {
+				$('#background').css({
+					'position' : 'relative',
+					'top' : PageYOffsetFixBar
+				});
+
+				if(window.pageYOffset >= PageYOffsetPosTop) {
+					$('#nav_scroll_bar').css({
+						'position' : 'fixed',
+						'top' : 0
+					});
+				}
+			} else if(window.pageYOffset < PageYOffsetFixBar) {
+				$('#background').css({
+					'position' : 'fixed',
+					'top' : 0
+				});
+			}
+
+			if(window.pageYOffset < PageYOffsetPosTop) {
+				$('#nav_scroll_bar').css({
+					'position' : 'absolute',
+					'top' : $(window).height() - $('#nav_scroll_bar').height()
+				});
+			}
 		}
 
 		init();
