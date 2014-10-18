@@ -1,4 +1,4 @@
-var ScrollingNav = (function(scroller) {
+var ScrollingNav = (function(scroller, scrollBar) {
   return function() {
 
     var updateScroller = function() {
@@ -12,17 +12,24 @@ var ScrollingNav = (function(scroller) {
     }
 
     var positionBar = function() {
-      var PageYOffsetFixBar = $(window).height() - $('#header').height() + 2 * $('#nav_scroll_bar').height();
-      var PageYOffsetPosTop = $(window).height() - $('#nav_scroll_bar').height();
+      var PageYOffsetFixBar = $(window).height() - $('#header').height() + 2 * scrollBar.height();
+      var PageYOffsetPosTop = $(window).height() - scrollBar.height();
+
+      console.log(window.pageYOffset + ", " + PageYOffsetFixBar + ", " + window.pageYOffset >= PageYOffsetFixBar);
+      console.log(window.pageYOffset);
+      console.log(PageYOffsetFixBar);
 
       if(window.pageYOffset >= PageYOffsetFixBar) {
-
+        scrollBar.css({
+          'position' : 'fixed',
+          'top' : $('#header').height() + scrollBar.height()
+        });
 
         if(window.pageYOffset >= PageYOffsetPosTop) {
 
         }
       } else if(window.pageYOffset < PageYOffsetFixBar) {
-        
+
 
         if(window.pageYOffset < PageYOffsetPosTop) {
 
@@ -32,4 +39,4 @@ var ScrollingNav = (function(scroller) {
 
     this.updateScroller = updateScroller;
   }
-})($('#scrolling_nav_wrapper'));
+})($('#scrolling_nav_wrapper'), $('#nav_scroll_bar'));

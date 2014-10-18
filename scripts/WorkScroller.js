@@ -2,7 +2,7 @@ var WorkScroller = (function(scroller, prevWork) {
 	return function(callback) {
 
 		var clicks = 0;
-		var scrollSpeed = 10;
+		var scrollSpeed = 3;
 		var scrollCallback = callback;
 		var startPos = -53;
 
@@ -33,13 +33,13 @@ var WorkScroller = (function(scroller, prevWork) {
 			});
 		}
 
-		var scrollDirection = function(forward) {
+		var scrollDirection = function(scrollAmount) {
 
-			var scrollValue = forward ? scrollSpeed : -scrollSpeed;
+			var scrollValue = scrollAmount * scrollSpeed * -1;
 
 			if (prevWork.position().left + scrollValue >= (prevWork.width() - $(window).width()) * -1 && prevWork.position().left + scrollValue <= 0) {
 				//Scroll prev_work.
-				newPos = prevWork.position().left + (forward ? scrollSpeed : -scrollSpeed);
+				newPos = prevWork.position().left + scrollValue;
 				prevWork.css('left', newPos);
 
 				//Scroll workScroller accordingly.
