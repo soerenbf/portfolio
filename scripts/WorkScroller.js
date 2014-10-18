@@ -37,16 +37,23 @@ var WorkScroller = (function(scroller, prevWork) {
 
 			var scrollValue = forward ? scrollSpeed : -scrollSpeed;
 
-			if (prevWork.position().left + scrollValue >= (prevWork.width() - $(window).width() + 150) * -1 && prevWork.position().left + scrollValue <= 0) {
+			if (prevWork.position().left + scrollValue >= (prevWork.width() - $(window).width()) * -1 && prevWork.position().left + scrollValue <= 0) {
 				//Scroll prev_work.
 				newPos = prevWork.position().left + (forward ? scrollSpeed : -scrollSpeed);
 				prevWork.css('left', newPos);
 
 				//Scroll workScroller accordingly.
-				var workScrollMax = prevWork.width() - $(window).width() + 150;
+				var workScrollMax = prevWork.width() - $(window).width();
 				var workAmountScrolled = 1 - (newPos + workScrollMax) / workScrollMax;
 
 				scroller.css('left', startPos + workAmountScrolled * $('#content_area').width());
+
+			} else if (prevWork.position().left + scrollValue < (prevWork.width() - $(window).width()) * -1) {
+				prevWork.css('left', (prevWork.width() - $(window).width()) * -1);
+				scroller.css('left', startPos + $('#content_area').width());
+			} else if (prevWork.position().left + scrollValue > 0) {
+				prevWork.css('left', 0);
+				scroller.css('left', startPos);
 			}
 
 		}

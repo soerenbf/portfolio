@@ -18,29 +18,6 @@ body {
   top: 0px;
   z-index: 100;
 }
-#nav_scroll_bar .scroll_bar_bg {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-}
-#nav_scroll_bar #scroll_track {
-  background: rgba(0, 0, 0, 0.3);
-  width: 10px;
-  height: 90%;
-  position: relative;
-  top: 5%;
-  left: 70px;
-  -moz-border-radius: 5px;
-  border-radius: 5px;
-}
-#nav_scroll_bar #scroll_bar_border {
-  background: #16a085;
-  width: 6px;
-  height: 100%;
-  position: absolute;
-  right: 0px;
-}
 #nav_scroll_bar #scrolling_nav_wrapper {
   position: fixed;
   width: 150px;
@@ -51,21 +28,11 @@ body {
   height: 100%;
   background: #16a085;
 }
-#nav_scroll_bar #scrolling_nav_wrapper #scrolling_page_description {
-  -webkit-transform: rotate(90deg);
-  position: relative;
-  top: -40px;
-  left: 104px;
-  font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
-  font-size: 25px;
-  color: #16a085;
-}
 #content_area {
   position: absolute;
   left: 0;
   top: 0;
   width: 100%;
-  left: 150px;
 }
 #content_area h1 {
   font-size: 50px;

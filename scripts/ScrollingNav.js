@@ -5,7 +5,7 @@ var ScrollingNav = (function(scroller) {
       var pageScrollMax = $('#content_area').height() - $('body').height();
       var pageAmountScrolled = 1 - (pageScrollMax - window.pageYOffset) / pageScrollMax;
 
-      scroller.css('top', ($('body').height() - scroller.height()) * pageAmountScrolled);
+      scroller.css('left', ($('body').width() - scroller.width()) * pageAmountScrolled);
     }
 
     this.updateScroller = updateScroller;

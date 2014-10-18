@@ -21,7 +21,7 @@ var LayoutManager = (function() {
 
 			workArray = workItems;
 
-			resizeElements($(window).width() - $('#nav_scroll_bar').width());
+			resizeElements($(window).width());
 		}
 
 		var resizeElements = function(elWidth) {
@@ -31,7 +31,7 @@ var LayoutManager = (function() {
 
 			//Calculate width of div#prev_work_items_wrapper based on the amount of data. Every prev_work_item is 640px wide incl. margin. If the width does not exceed windowSize,
 			var dataWidth = 640 + ((workArray.length - 1) * 320);
-			var contentWidth = $(window).width() - $('#nav_scroll_bar').width();
+			var contentWidth = $(window).width();
 			$('div#prev_work_items_wrapper').width(dataWidth > contentWidth ? dataWidth : contentWidth);
 
 			//Place the white background of #scroll_bar_nav at window.height().
