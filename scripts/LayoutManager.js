@@ -21,10 +21,10 @@ var LayoutManager = (function() {
 
 			workArray = workItems;
 
-			resizeElements($(window).width());
+			layoutElements($(window).width());
 		}
 
-		var resizeElements = function(elWidth) {
+		var layoutElements = function(elWidth) {
 			//Resize  width of div#prev_work and section#content_area.
 			$('section#content_area').width(elWidth).css('top', $(window).height());
 			$('div#prev_work').width(elWidth);
@@ -44,6 +44,6 @@ var LayoutManager = (function() {
 
 		//Exports
 		this.layoutPortfolio = layoutPortfolio;
-		this.resizeElements = resizeElements;
+		this.layoutElements = layoutElements;
 	}
 })();
