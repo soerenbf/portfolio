@@ -26,7 +26,7 @@ var LayoutManager = (function() {
 
 		var resizeElements = function(elWidth) {
 			//Resize  width of div#prev_work and section#content_area.
-			$('section#content_area').width(elWidth);
+			$('section#content_area').width(elWidth).css('top', $(window).height());
 			$('div#prev_work').width(elWidth);
 
 			//Calculate width of div#prev_work_items_wrapper based on the amount of data. Every prev_work_item is 640px wide incl. margin. If the width does not exceed windowSize,
@@ -34,14 +34,11 @@ var LayoutManager = (function() {
 			var contentWidth = $(window).width();
 			$('div#prev_work_items_wrapper').width(dataWidth > contentWidth ? dataWidth : contentWidth);
 
-			//Place the white background of #scroll_bar_nav at window.height().
-			$('#scroll_bar_bg_white').css('top', $(window).height());
-
-			//Resize #header_wrapper to match the screen size.
-			$('.header').height($(window).height());
+			//Resize #header_wrapper to match the screen size and set min-height attribute.
+			$('#header_wrapper').height($(window).height()).css('min-height', $('#header').height() + 2 * $('#nav_scroll_bar').height());
 
 			//Position the #work_timeline_scroller correctly. Position:absolute.
-			$('#work_timeline_scroller').css('top', $('div#header_wrapper').height() + ($('div#prev_work').height() / 2) - ($('div#prev_work_header').height() / 2)); //Position it in the middle of #prev_work_items_wrapper.
+			$('#work_timeline_scroller').css('top', ($('div#prev_work').height() / 2) - ($('div#prev_work_header').height() / 2)); //Position it in the middle of #prev_work_items_wrapper.
 		}
 
 		//Exports

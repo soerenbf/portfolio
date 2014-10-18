@@ -13,7 +13,9 @@ var ScrollManager = (function(x, y, scrollingNav, prevWork, workScrollerEl) {
 		}
 
 		var handleScroll = function(scrollEvent) {
+			//Scroll the scrolling nav, scroll the header upwards slowly, and check if the sign to click workscroller should be shown.
 			scrollingNav.updateScroller();
+			$('#header_wrapper').height($(window).height() - window.pageYOffset);
 			toggleSign(y > showSignOffset && y < showSignOffset + showSignInterval && workScroller.getClicks() === 0);
 		}
 
