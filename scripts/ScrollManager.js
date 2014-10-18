@@ -26,7 +26,7 @@ var ScrollManager = (function(x, y, scrollingNav, prevWork, workScrollerEl) {
 		}
 
 		var handleWorkScroll = function(event) { //Sent to workScroller -> workScroller.scrollDisabler as a callback.
-			workScroller.scrollDirection(event.originalEvent.wheelDelta >= 0);
+			workScroller.scrollDirection(event.deltaY <= 0);
 		}
 
 		init();
