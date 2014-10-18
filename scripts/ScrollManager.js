@@ -26,8 +26,44 @@ var ScrollManager = (function(x, y, scrollingNav, prevWork, workScrollerEl) {
 			}
 		}
 
-		var handleWorkScroll = function(event) { //Sent to workScroller -> workScroller.scrollDisabler as a callback.
-			workScroller.scrollDirection(event.deltaY);
+		var handleWorkScroll = function(event, inputIsMouse) { //Sent to workScroller -> workScroller.scrollDisabler as a callback.
+			var keyboardScrollSpeed = 10;
+
+			if(inputIsMouse) {
+				workScroller.scrollDirection(event.deltaY);
+			} else {
+				switch(event.keyCode) {
+					case 32: //Spacebar
+						workScroller.scrollDirection(keyboardScrollSpeed);
+						break;
+					case 33: //Jump to beginning of page
+						workScroller.scrollDirection(keyboardScrollSpeed * -1);
+						break;
+					case 34: //Jump to end of page
+						workScroller.scrollDirection(keyboardScrollSpeed);
+						break;
+					case 35: //End of line
+						workScroller.scrollDirection(keyboardScrollSpeed);
+						break;
+					case 36: //Start of line
+						workScroller.scrollDirection(keyboardScrollSpeed * -1);
+						break;
+					case 38: //Up
+						workScroller.scrollDirection(keyboardScrollSpeed * -1);
+						break;
+					case 39: //Right
+						workScroller.scrollDirection(keyboardScrollSpeed);
+						break;
+					case 37: //Left
+						workScroller.scrollDirection(keyboardScrollSpeed * -1);
+						break;
+					case 40: //Down
+						workScroller.scrollDirection(keyboardScrollSpeed);
+						break;
+					default:
+						break;
+				}
+			}
 		}
 
 		var updateHeader = function() {

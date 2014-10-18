@@ -5,9 +5,10 @@ var ScrollDisabler = (function() {
 
     var disableScrolling = function() {
       addWheelListener(document, handleWheel);
-      $(document).on("keydown", function(event) {
-        handleKeydown.call(this, event);
-      });
+      // $(document).on("keydown", function(event) {
+      //   handleKeydown.call(this, event);
+      // });
+      $(document).on("keydown", handleKeydown);
     }
 
     var enableScrolling = function() {
@@ -18,7 +19,7 @@ var ScrollDisabler = (function() {
       for (var i = 0; i < scrollEventKeys.length; i++) {
         if (event.keyCode === scrollEventKeys[i]) {
           event.preventDefault();
-          //disabledScrollCallback(event); //If we want to handle keyScrolling.
+          disabledScrollCallback(event, false); //If we want to handle keyScrolling.
           return;
         }
       }
@@ -26,7 +27,7 @@ var ScrollDisabler = (function() {
 
     var handleWheel = function(event) {
       event.preventDefault();
-      disabledScrollCallback(event);
+      disabledScrollCallback(event, true);
     }
 
     //Exports.
