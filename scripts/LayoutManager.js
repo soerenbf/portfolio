@@ -35,7 +35,8 @@ var LayoutManager = (function() {
 			$('div#prev_work_items_wrapper').width(dataWidth > contentWidth ? dataWidth : contentWidth);
 
 			//Resize #header_wrapper to match the screen size and set min-height attribute.
-			$('#header_wrapper').height($(window).height()).css('min-height', $('#header').height() + 2 * $('#nav_scroll_bar').height());
+			$('#background').height($(window).height());
+			$('#header_wrapper').css('min-height', $('#header').height() + 2 * $('#nav_scroll_bar').height());
 
 			//Position the #work_timeline_scroller correctly. Position:absolute.
 			$('#work_timeline_scroller').css('top', ($('div#prev_work').height() / 2) - ($('div#prev_work_header').height() / 2)); //Position it in the middle of #prev_work_items_wrapper.
