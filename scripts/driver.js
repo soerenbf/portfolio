@@ -21,5 +21,9 @@ $(document).ready(function() {
 
 	//Local event handling.
 	//Show description when hovering over items in the portfolio.
-	$(".prev_work_item").hover(animationManager.togglePrevWorkItemDescription($(this), true), animationManager.togglePrevWorkItemDescription($(this), false));
+	$("#prev_work_items_wrapper").on('mouseenter', '.prev_work_item',function() {
+		animationManager.togglePrevWorkItemDescription($(this), true);
+	}).on('mouseleave', '.prev_work_item',function() {
+		animationManager.togglePrevWorkItemDescription($(this), false);
+	});
 });
