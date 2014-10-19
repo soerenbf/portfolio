@@ -20,5 +20,6 @@ $(document).ready(function() {
 	});
 
 	//Local event handling.
-	$('.prev_work_item');
+	//Show description when hovering over items in the portfolio.
+	$(".prev_work_item").hover(animationManager.togglePrevWorkItemDescription($(this), true), animationManager.togglePrevWorkItemDescription($(this), false));
 });
