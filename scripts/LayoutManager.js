@@ -16,7 +16,15 @@ var LayoutManager = (function() {
 				$(pwItem).addClass('prev_work_item')
 					.appendTo(parent);
 					//Fill in data from workItems.
-				console.log(workItems[i]);
+					//Header.
+					var pwItemHeader = document.createElement('h1');
+					pwItemHeader.innerHTML = "test";
+					$(pwItemHeader).appendTo(pwItem);
+
+					//Work item description.
+					var pwItemDesc = document.createElement('div');
+					$(pwItemDesc).addClass('pw_item_description')
+						.appendTo(pwItem);
 			};
 
 			workArray = workItems;
@@ -27,13 +35,15 @@ var LayoutManager = (function() {
 		var layoutElements = function() {
 			//Resize #header_wrapper to match the screen size and set min-height attribute.
 			$('#background').height($(window).height());
-			$('#header_wrapper').css('min-height', $('#header').height() + 2 * $('#nav_scroll_bar').height());
+			$('#header_wrapper').css('min-height', $('#header')
+				.height() + 2 * $('#nav_scroll_bar').height());
 
 			//Position the nav_scroll_bar above content area.
 			$('#nav_scroll_bar').css('top', $(window).height() - $('#nav_scroll_bar').height());
 
 			//Resize  width of div#prev_work and section#content_area.
-			$('section#content_area').width($(window).width()).css('top', $(window).height());
+			$('section#content_area').width($(window).width())
+				.css('top', $(window).height());
 			$('div#prev_work').width($(window).width());
 
 			//Calculate width of div#prev_work_items_wrapper based on the amount of data. Every prev_work_item is 640px wide incl. margin. If the width does not exceed windowSize,
