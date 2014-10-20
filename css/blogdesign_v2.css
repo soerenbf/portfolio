@@ -109,12 +109,6 @@ body h1 {
 #content_area #prev_work #prev_work_items_wrapper #prev_work_items_upper {
   border-bottom: #3498db solid 3px;
 }
-#content_area #prev_work #prev_work_items_wrapper #prev_work_items_upper .prev_work_item h1 {
-  bottom: 0px;
-}
-#content_area #prev_work #prev_work_items_wrapper #prev_work_items_lower .prev_work_item h1 {
-  top: 0px;
-}
 #content_area #prev_work #prev_work_items_wrapper #prev_work_items_lower_wrapper {
   border-top: #3498db solid 3px;
   margin-bottom: 100px;
@@ -131,12 +125,20 @@ body h1 {
 #content_area #prev_work #prev_work_items_wrapper .prev_work_item h1 {
   width: 100%;
   position: absolute;
+  top: 0;
   background: #3498db;
   font-size: 25px;
   color: #ecf0f1;
   text-align: center;
   line-height: 0;
   padding: 35px 0;
+}
+#content_area #prev_work #prev_work_items_wrapper .prev_work_item h1 a {
+  color: #ecf0f1;
+  text-decoration: none;
+}
+#content_area #prev_work #prev_work_items_wrapper .prev_work_item h1 a:visited {
+  color: #ecf0f1;
 }
 #content_area #prev_work #prev_work_items_wrapper .prev_work_item .pw_item_description {
   background: rgba(0, 0, 0, 0.3);

@@ -18,7 +18,7 @@ var LayoutManager = (function() {
 					//Fill in data from workItems.
 					//Header.
 					var pwItemHeader = document.createElement('h1');
-					pwItemHeader.innerHTML = "test";
+					pwItemHeader.innerHTML = '<a href="#">' + 'Awesome project '+ (i + 1) + '</a>';
 					$(pwItemHeader).appendTo(pwItem);
 
 					//Work item description.

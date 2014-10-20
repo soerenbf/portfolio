@@ -141,23 +141,6 @@ body {
 
 			#prev_work_items_upper {
 				border-bottom: @main_theme_color solid 3px;
-
-				.prev_work_item {
-
-					h1 {
-						bottom: 0px;
-					}
-				}
-			}
-
-			#prev_work_items_lower {
-
-				.prev_work_item {
-
-					h1 {
-						top: 0px;
-					}
-				}
 			}
 
 			#prev_work_items_lower_wrapper {
@@ -177,13 +160,22 @@ body {
 				@pwItemHeaderHeight: 70px;
 				h1 {
 					width: 100%;
-					position: absolute;
+					position: absolute; top: 0;
 					background: @main_theme_color;
 					font-size: 25px;
 					color: @white;
 					text-align: center;
 					line-height: 0;
 					padding: (@pwItemHeaderHeight / 2) 0;
+
+					a {
+						color: @white;
+						text-decoration: none;
+					}
+
+					a:visited {
+						color: @white;
+					}
 				}
 
 				.pw_item_description {
