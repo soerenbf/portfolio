@@ -12,7 +12,8 @@
 
 @code_font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
 
-@scroll_bar_height: 75px;
+@scroll_bar_height: 60px;
+@scrolling_nav_width: 300px;
 
 body, html {
 	height:100%;
@@ -106,7 +107,7 @@ body {
 
 	#scrolling_nav_wrapper {
 		position: relative;
-		width: 200px; height: @scroll_bar_height;
+		width: @scrolling_nav_width; height: @scroll_bar_height;
 
 		#scrolling_nav {
 			width: 100%; height: 100%;
@@ -158,7 +159,7 @@ body {
 				position: relative;
 				overflow: hidden;
 
-				@pwItemHeaderHeight: 70px;
+				@pwItemHeaderHeight: 60px;
 				h1 {
 					width: 100%;
 					position: absolute; top: 0;
