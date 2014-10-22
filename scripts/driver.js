@@ -3,10 +3,12 @@ $(document).ready(function() {
 	var backendUrl = '/blog_backend/index.php';
 
 	//Init.
-	var layoutManager = new LayoutManager(); //LayoutManager.js
-	var scrollManager = new ScrollManager(); //ScrollManager.js
-	var ajaxComm = new AjaxCommunicator(backendUrl, layoutManager.layoutPortfolio); //AjaxCommunicator.js
-	var animationManager = new AnimationManager();
+	window.layoutManager = new LayoutManager(); //LayoutManager.js
+	
+	window.scrollManager = new ScrollManager(); //ScrollManager.js
+	window.animationManager = new AnimationManager();
+
+	window.ajaxComm = new AjaxCommunicator(backendUrl, layoutManager.layoutPortfolio); //AjaxCommunicator.js
 
 	//Get the items from the backend.
 	ajaxComm.getPortfolio();
