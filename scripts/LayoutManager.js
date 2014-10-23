@@ -41,6 +41,9 @@ var LayoutManager = (function() {
 			//Position the nav_scroll_bar above content area.
 			$('#nav_scroll_bar').css('top', $(window).height() - $('#nav_scroll_bar').height());
 
+			//Indent headers to be indented; elements with .indented.
+			$('.indented').css('text-indent', $(window).width() > $('.container_16').width() ? (($(window).width() - $('.container_16').width()) / 2) : 0)
+
 			//Resize  width of div#prev_work and section#content_area.
 			$('section#content_area').width($(window).width())
 				.css('top', $(window).height());
@@ -52,7 +55,7 @@ var LayoutManager = (function() {
 			$('div#prev_work_items_wrapper').width(dataWidth > contentWidth ? dataWidth : contentWidth);
 
 			//Position the #work_timeline_scroller correctly. Position:absolute.
-			$('#work_timeline_scroller').css('top', ($('div#prev_work').height() / 2) - ($('div#prev_work_header').height() / 2)); //Position it in the middle of #prev_work_items_wrapper.
+			$('#work_timeline_scroller').css('top', ($('div#prev_work_items_wrapper').height() / 2) + $('#prev_work_header').outerHeight(true) - ($('#work_timeline_scroller').outerHeight(true) / 2)); //Position it in the middle of #prev_work_items_wrapper.
 		}
 
 		//Exports
