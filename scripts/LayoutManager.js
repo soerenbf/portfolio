@@ -29,10 +29,10 @@ var LayoutManager = (function() {
 
 			workArray = workItems;
 
-			layoutElements();
+			updateLayout();
 		}
 
-		var layoutElements = function() {
+		var updateLayout = function() {
 			//Resize #header_wrapper to match the screen size and set min-height attribute.
 			$('#background').height($(window).height());
 			$('#header_wrapper').css('min-height', $('#header')
@@ -60,6 +60,6 @@ var LayoutManager = (function() {
 
 		//Exports
 		this.layoutPortfolio = layoutPortfolio;
-		this.layoutElements = layoutElements;
+		this.updateLayout = updateLayout;
 	}
 })();

@@ -4,7 +4,7 @@ $(document).ready(function() {
 
 	//Init.
 	window.layoutManager = new LayoutManager(); //LayoutManager.js
-	
+
 	window.scrollManager = new ScrollManager(); //ScrollManager.js
 	window.animationManager = new AnimationManager();
 
@@ -15,7 +15,7 @@ $(document).ready(function() {
 
 	//Global document wide event handling.
 	$(window).on('resize', function(event) {
-		layoutManager.layoutElements();
+		layoutManager.updateLayout();
 		scrollManager.handleScroll();
 	}).on('scroll', function(event) {
 		scrollManager.handleScroll(event);
