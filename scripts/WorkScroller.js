@@ -24,9 +24,17 @@ var WorkScroller = (function(scroller, prevWork) {
 				if ($(this).hasClass('active')) {
 					$(this).removeClass('active');
 					scrollDisabler.enableScrolling();
+					$(this).css({
+						'background-color' : '#ecf0f1',
+						'color' : themeColor
+					});
 				} else {
 					$(this).addClass('active');
 					scrollDisabler.disableScrolling();
+					$(this).css({
+						'background-color' : themeColor,
+						'color' : '#ecf0f1'
+					});
 				};
 
 				clicks++;

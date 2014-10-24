@@ -37,11 +37,11 @@
 			<!--Sections are made of: div.wrapper holding a div.container_16.content_section.clearfix-->
 			<div class="wrapper" id="prev_work_wrapper">
 				<div id="prev_work">
-					<div id="prev_work_header" class="swift clearfix">
-						<h1 class="indented">
+					<div id="prev_work_header" class="swift indented clearfix">
+						<h1>
 							<span class="class_or_var">var</span> categories: [<span class="type">String</span>] = [<span id="category_array"></span>];
 						</h1>
-						<h1 class="indented">
+						<h1>
 							<span class="class_or_var">self</span>.<span class="property_or_self-defined">portfolio</span> = <span class="property_or_self-defined">Database</span>.<span class="function">getPortfolioFor</span>(name: <span class="string">"Søren"</span>, withCategories: categories, usingLayout: <span class="type">portfolioLayoutSidescroll</span>);
 						</h1>
 					</div>
@@ -56,17 +56,21 @@
 			</div>
 
 			<div id="skills_wrapper" class="wrapper">
-				<h1 class="swift indented">
-					<span class="class_or_var">self</span>.<span class="property_or_self-defined">skills</span> = <span class="property_or_self-defined">Database</span>.<span class="function">getExperienceFor</span>(name: <span class="string">"Søren"</span>);
-				</h1>
+				<div class="indented">
+					<h1 class="swift">
+						<span class="class_or_var">self</span>.<span class="property_or_self-defined">skills</span> = <span class="property_or_self-defined">Database</span>.<span class="function">getExperienceFor</span>(name: <span class="string">"Søren"</span>);
+					</h1>
+				</div>
 				<div id="skills" class="container_16 content_section clearfix">
 				</div>
 			</div>
 
 			<div id="about_wrapper" class="wrapper">
-				<h1 class="swift indented">
-					<span class="class_or_var">self</span>.<span class="property_or_self-defined">email</span> = <span class="string">"soerenbf@gmail.com"</span>
-				</h1>
+				<div class="indented">
+					<h1 class="swift">
+						<span class="class_or_var">self</span>.<span class="property_or_self-defined">email</span> = <span class="string">"soerenbf@gmail.com"</span>
+					</h1>
+				</div>
 				<div id="about" class="container_16 content_section clearfix">
 				</div>
 			</div>

@@ -2,6 +2,7 @@ var LayoutManager = (function() {
 	return function() {
 
 		var workArray;
+		var firstLoad = true;
 
 		var layoutPortfolio = function(workItems) {
 			//Lay out the prev_work_item elements using the 'zig-zag' layout.
@@ -18,14 +19,22 @@ var LayoutManager = (function() {
 					//Fill in data from workItems.
 					//Header.
 					var pwItemHeader = document.createElement('h1');
-					pwItemHeader.innerHTML = '<a href="#">' + 'Awesome project '+ (i + 1) + '</a>';
+					pwItemHeader.innerHTML = '<a href="#">' + workItems[i]['title'] + '</a>';
 					$(pwItemHeader).appendTo(pwItem);
 
-					//Work item description.
-					var pwItemDesc = document.createElement('div');
-					$(pwItemDesc).addClass('pw_item_description')
+					//Work item teaser.
+					var pwItemTeaser = document.createElement('div');
+					$(pwItemTeaser).addClass('pw_item_teaser')
 						.appendTo(pwItem);
+
+					//Add the data to the teaser element: item description, software used, tags, category_name.
+
+					//Add color data to element.
+					$(pwItem).attr('data-color', workItems[i]['color_hex']);
 			};
+
+			changeThemeColor(workItems[0]['color_hex'], !firstLoad);
+			firstLoad = false;
 
 			workArray = workItems;
 
@@ -42,7 +51,10 @@ var LayoutManager = (function() {
 			$('#nav_scroll_bar').css('top', $(window).height() - $('#nav_scroll_bar').height());
 
 			//Indent headers to be indented; elements with .indented.
-			$('.indented').css('text-indent', $(window).width() > $('.container_16').width() ? (($(window).width() - $('.container_16').width()) / 2) : 0)
+			var textIndent = $(window).width() > $('.container_16').width() ? (($(window).width() - $('.container_16').width()) / 2) : 0;
+			$('.indented').css('left', textIndent);
+			//Resize swift-like headers to fit the screen.
+			$('.indented').width($(window).width() - textIndent);
 
 			//Resize  width of div#prev_work and section#content_area.
 			$('section#content_area').width($(window).width())
@@ -58,8 +70,26 @@ var LayoutManager = (function() {
 			$('#work_timeline_scroller').css('top', ($('div#prev_work_items_wrapper').height() / 2) + $('#prev_work_header').outerHeight(true) - ($('#work_timeline_scroller').outerHeight(true) / 2)); //Position it in the middle of #prev_work_items_wrapper.
 		}
 
+		var changeThemeColor = function(color, animated) {
+			window.themeColor = color;
+
+			//All elements that need the color changed.
+			$('#header_wrapper').css('background-color', themeColor); //Change background-color.
+			$('#nav_scroll_bar').css('background-color', themeColor); //Change background-color.
+			$('#work_timeline_scroller').css('border-color', themeColor).css('color', themeColor); //Change border-color and color.
+
+			if ($('#work_timeline_scroller').hasClass('active')) {
+				$('#work_timeline_scroller').css({
+					'background-color' : themeColor,
+					'color' : '#ecf0f1'
+				});
+			}
+		}
+
 		//Exports
 		this.layoutPortfolio = layoutPortfolio;
 		this.updateLayout = updateLayout;
+		this.changeThemeColor = changeThemeColor;
+
 	}
 })();
