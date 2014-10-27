@@ -15,14 +15,14 @@ body h1 {
 .obj-c,
 .swift {
   color: #000;
-  font: 18px/28px Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
+  font: 14px/24px Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
   text-align: left;
   margin: 100px 0 25px 0;
 }
 .obj-c h1,
 .swift h1 {
   color: #000;
-  font: 18px/28px Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
+  font: 14px/24px Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
 }
 .obj-c .class_or_var,
 .swift .class_or_var {
