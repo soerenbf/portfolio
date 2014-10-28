@@ -3,22 +3,25 @@ var AjaxCommunicator = (function(AjaxRequest) {
 
 		var getPortfolio = function(callback) {
 
-			_sendGetRequest(backendUrl + '/getPortfolioPosts', callback);
+			_sendGetRequest(new AjaxRequest(), backendUrl + '/getPortfolioPosts', callback);
 		}
 
 		var getPortfolioPostById = function(postId, callback) {
-			_sendGetRequest(backendUrl + '/getPortfolioPost?id=' + postId, callback);
+			_sendGetRequest(new AjaxRequest(), backendUrl + '/getPortfolioPost?id=' + postId, callback);
+		}
+
+		var getPortfolioPostsFromCategories = function(categories, callback) {
+			_sendGetRequest(new AjaxRequest(), backendUrl + '/getPortfolioPostsFromCategories?categories=' + JSON.stringify(categories), callback);
 		}
 
 		var getPortfolioCategories = function(callback) {
-			_sendGetRequest(backendUrl + '/getPortfolioCategories', callback);
+			_sendGetRequest(new AjaxRequest(), backendUrl + '/getPortfolioCategories', callback);
 		}
 
-		var _sendGetRequest = function(url, callback) {
-			var ajaxReq = new AjaxRequest();
+		var _sendGetRequest = function(ajaxReq, url, callback) {
 
 			ajaxReq.onload = function() {
-				callback(_parseObjectToArray(JSON.parse(this.responseText)))
+				callback(_parseObjectToArray(JSON.parse(this.responseText)));
 			}
 
 			ajaxReq.open('GET', url, true);
@@ -38,6 +41,7 @@ var AjaxCommunicator = (function(AjaxRequest) {
 		this.getPortfolio = getPortfolio;
 		this.getPortfolioPostById = getPortfolioPostById;
 		this.getPortfolioCategories = getPortfolioCategories;
+		this.getPortfolioPostsFromCategories = getPortfolioPostsFromCategories;
 
 	}
 })(window.XMLHttpRequest);
