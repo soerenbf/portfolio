@@ -3,23 +3,24 @@ var AjaxCommunicator = (function(AjaxRequest) {
 
 		var getPortfolio = function(callback) {
 
-			_sendGetRequest(new AjaxRequest(), backendUrl + '/getPortfolioPosts', callback);
+			_sendGetRequest(backendUrl + '/getPortfolioPosts', callback);
 		}
 
 		var getPortfolioPostById = function(postId, callback) {
-			_sendGetRequest(new AjaxRequest(), backendUrl + '/getPortfolioPost?id=' + postId, callback);
+			_sendGetRequest(backendUrl + '/getPortfolioPost?id=' + postId, callback);
 		}
 
 		var getPortfolioPostsFromCategories = function(categories, callback) {
-			_sendGetRequest(new AjaxRequest(), backendUrl + '/getPortfolioPostsFromCategories?categories=' + JSON.stringify(categories), callback);
+			_sendGetRequest(backendUrl + '/getPortfolioPostsFromCategories?categories=' + JSON.stringify(categories), callback);
 		}
 
 		var getPortfolioCategories = function(callback) {
-			_sendGetRequest(new AjaxRequest(), backendUrl + '/getPortfolioCategories', callback);
+			_sendGetRequest(backendUrl + '/getPortfolioCategories', callback);
 		}
 
-		var _sendGetRequest = function(ajaxReq, url, callback) {
-
+		var _sendGetRequest = function(url, callback) {
+			var ajaxReq = new AjaxRequest();
+			
 			ajaxReq.onload = function() {
 				callback(_parseObjectToArray(JSON.parse(this.responseText)));
 			}
