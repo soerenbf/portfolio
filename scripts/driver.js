@@ -8,10 +8,10 @@ $(document).ready(function() {
 	window.scrollManager = new ScrollManager(); //ScrollManager.js
 	window.animationManager = new AnimationManager();
 
-	window.ajaxComm = new AjaxCommunicator(backendUrl, layoutManager.layoutPortfolio); //AjaxCommunicator.js
+	window.ajaxComm = new AjaxCommunicator(backendUrl); //AjaxCommunicator.js
 
 	//Get the items from the backend.
-	ajaxComm.getPortfolio();
+	ajaxComm.getPortfolio(layoutManager.layoutPortfolio);
 
 	//Global document wide event handling.
 	$(window).on('resize', function(event) {

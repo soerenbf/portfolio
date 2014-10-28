@@ -29,7 +29,8 @@ var LayoutManager = (function() {
 
 					//Add the data to the teaser element: item description, software used, tags, category_name.
 
-					//Add color data to element.
+					//Add data to element.
+					$(pwItem).attr('id', 'portfolio_post_' + workItems[i]['id']);
 					$(pwItem).attr('data-color', workItems[i]['color_hex']);
 			};
 

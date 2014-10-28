@@ -1,38 +1,31 @@
 var AjaxCommunicator = (function(AjaxRequest) {
-	return function(backendUrl, responseCallback) {
+	return function(backendUrl) {
 
-		var ajaxReq;
+		var getPortfolio = function(callback) {
 
-		var init = function() {
-			ajaxReq = new AjaxRequest();
-
-			ajaxReq.onreadystatechange = handleResponse;
+			_sendGetRequest(backendUrl + '/getPortfolioPosts', callback);
 		}
 
-		var getPortfolio = function() {
-
-			var url = backendUrl + '/getPortfolioPosts';
-
-			ajaxReq.open('GET', url, true);
-			ajaxReq.send();
+		var getPortfolioPostById = function(postId, callback) {
+			_sendGetRequest(backendUrl + '/getPortfolioPost?id=' + postId, callback);
 		}
 
-		var getPortfolioPostById = function(postId) {
-
-			var url = backendUrl + '/getPortfolioPost?id=' + postId;
-
-			ajaxReq.open('GET', url, true);
-			ajaxReq.send();
+		var getPortfolioCategories = function(callback) {
+			_sendGetRequest(backendUrl + '/getPortfolioCategories', callback);
 		}
 
-		var handleResponse = function() {
-			if (ajaxReq.readyState == 4 && ajaxReq.status == 200) {
+		var _sendGetRequest = function(url, callback) {
+			var ajaxReq = new AjaxRequest();
 
-				responseCallback(parseObjectToArray(JSON.parse(ajaxReq.responseText)));
+			ajaxReq.onload = function() {
+				callback(_parseObjectToArray(JSON.parse(this.responseText)))
 			}
+
+			ajaxReq.open('GET', url, true);
+			ajaxReq.send();
 		}
 
-		var parseObjectToArray = function(ajaxResponseObj) {
+		var _parseObjectToArray = function(ajaxResponseObj) {
 			var newArray = [];
 			for (var key in ajaxResponseObj) {
 			    newArray.push(ajaxResponseObj[key]);
@@ -41,11 +34,10 @@ var AjaxCommunicator = (function(AjaxRequest) {
 			return newArray;
 		}
 
-		init();
-
 		//Exports.
 		this.getPortfolio = getPortfolio;
 		this.getPortfolioPostById = getPortfolioPostById;
+		this.getPortfolioCategories = getPortfolioCategories;
 
 	}
 })(window.XMLHttpRequest);
