@@ -1,6 +1,7 @@
 //Colors.
 @white: #ecf0f1;
-@black_trans: rgba(0, 0, 0, 0.3);
+@black_trans: rgba(0, 0, 0, 0.7);
+@white_trans: rgba(255, 255, 255, 0.1);
 
 @grey: #bdc3c7;
 
@@ -188,10 +189,56 @@ body {
 					}
 				}
 
+				.pw_item_category_icon {
+					width: @pwItemHeaderHeight; height: @pwItemHeaderHeight;
+					background: @black_trans;
+					position: absolute; left: 0px; top: 0px;
+				}
+
+				@teaser_items_border: 2px solid @white_trans;
 				.pw_item_teaser {
 					background: @black_trans;
 					width: 100%; height: (@pwItemHeight - @pwItemHeaderHeight);
 					position: absolute; bottom: ((@pwItemHeight - @pwItemHeaderHeight) * -1);
+
+					div {
+						float: left;
+					}
+
+					.pw_item_info {
+						width: (@pwItemHeaderHeight - 2); height: 100%;
+						border-right: @teaser_items_border;
+
+						div {
+							width: 100%;
+						}
+
+						.pw_item_date {
+							height: (@pwItemHeaderHeight - 2);
+							border-bottom: @teaser_items_border;
+						}
+
+						.pw_item_software {
+
+						}
+					}
+
+					.pw_item_description {
+						width: (@pwItemWidth - @pwItemHeaderHeight); height: 100%;
+
+						div {
+							width: 100%;
+						}
+
+						.pw_item_tags {
+							height: (@pwItemHeaderHeight - 2);
+							border-bottom: @teaser_items_border;
+						}
+
+						.pw_item_decription_text {
+
+						}
+					}
 				}
 			}
 		}

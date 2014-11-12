@@ -10,29 +10,9 @@ var LayoutManager = (function() {
 			var pwLower = $('div#prev_work_items_lower');
 
 			for (var i = 0; i < workItems.length; i++) {
-				//Depending on 'i', add a new div.prev_work_item to either pwUpper or pwLower.
-				var pwItem = document.createElement('div');
 				var parent = i % 2 === 0 ? pwUpper : pwLower;
-
-				$(pwItem).addClass('prev_work_item')
-					.appendTo(parent);
-					//Fill in data from workItems.
-					//Header.
-					var pwItemHeader = document.createElement('h1');
-					pwItemHeader.innerHTML = '<a href="#">' + workItems[i]['title'] + '</a>';
-					$(pwItemHeader).appendTo(pwItem);
-
-					//Work item teaser.
-					var pwItemTeaser = document.createElement('div');
-					$(pwItemTeaser).addClass('pw_item_teaser')
-						.appendTo(pwItem);
-
-					//Add the data to the teaser element: item description, software used, tags, category_name.
-
-					//Add data to element.
-					$(pwItem).attr('id', 'portfolio_post_' + workItems[i]['id']);
-					$(pwItem).attr('data-color', workItems[i]['color_hex']);
-			};
+				$(_makePortfolioItem(workItems[i])).appendTo(parent);
+			}
 
 			changeThemeColor(workItems[0]['color_hex'], !firstLoad);
 			firstLoad = false;
@@ -40,6 +20,52 @@ var LayoutManager = (function() {
 			workArray = workItems;
 
 			updateLayout();
+		}
+
+		var _makePortfolioItem = function(portfolioItem) {
+			//Depending on 'i', add a new div.prev_work_item to either pwUpper or pwLower.
+			var pwItem = document.createElement('div');
+			$(pwItem).addClass('prev_work_item');
+				//Fill in data from workItems.
+				//Header.
+				var pwItemHeader = document.createElement('h1');
+				pwItemHeader.innerHTML = '<a href="#">' + portfolioItem['title'] + '</a>';
+				$(pwItemHeader).appendTo(pwItem);
+
+				//Category icon.
+				var pwCatIcon = document.createElement('div');
+				$(pwCatIcon).addClass('pw_item_category_icon').appendTo(pwItem);
+
+				//Work item teaser.
+				var pwItemTeaser = document.createElement('div');
+				$(pwItemTeaser).addClass('pw_item_teaser').appendTo(pwItem);
+
+				//Add the data to the teaser element: item description(tags, description), info(date, software used).
+				//Info
+				var pwItemInfo = document.createElement('div');
+				$(pwItemInfo).addClass('pw_item_info').appendTo(pwItemTeaser);
+
+					var pwItemDate = document.createElement('div');
+					$(pwItemDate).addClass('pw_item_date').appendTo(pwItemInfo);
+
+					var pwItemSoftware = document.createElement('div');
+					$(pwItemSoftware).addClass('pw_item_software').appendTo(pwItemInfo);
+
+				//Description
+				var pwItemDesc = document.createElement('div');
+				$(pwItemDesc).addClass('pw_item_description').appendTo(pwItemTeaser);
+
+					var pwItemTags = document.createElement('div');
+					$(pwItemTags).addClass('pw_item_tags').appendTo(pwItemDesc);
+
+					var pwItemDescText = document.createElement('div');
+					$(pwItemDescText).addClass('pw_item_description_text').appendTo(pwItemDesc);
+
+			//Add data to element.
+			$(pwItem).attr('id', 'portfolio_post_' + portfolioItem['id']);
+			$(pwItem).attr('data-color', portfolioItem['color_hex']);
+
+			return pwItem;
 		}
 
 		var updateLayout = function() {
