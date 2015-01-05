@@ -93,7 +93,7 @@ body h1 {
 #nav_scroll_bar #scrolling_nav_wrapper #scrolling_nav {
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.3);
 }
 #content_area {
   position: absolute;
@@ -103,7 +103,7 @@ body h1 {
   background: #ecf0f1;
 }
 #content_area .wrapper {
-  border-bottom: 6px dashed rgba(0, 0, 0, 0.7);
+  border-bottom: 6px dashed rgba(0, 0, 0, 0.3);
 }
 #content_area .content_section {
   padding-top: 100px;
@@ -153,13 +153,13 @@ body h1 {
 #content_area #prev_work #prev_work_items_wrapper .prev_work_item .pw_item_category_icon {
   width: 60px;
   height: 60px;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.3);
   position: absolute;
   left: 0px;
   top: 0px;
 }
 #content_area #prev_work #prev_work_items_wrapper .prev_work_item .pw_item_teaser {
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.3);
   width: 100%;
   height: 290px;
   position: absolute;
