@@ -70,7 +70,7 @@ var LayoutManager = (function() {
 
 		var updateLayout = function() {
 			//Resize #header_wrapper to match the screen size and set min-height attribute.
-			$('#background').height($(window).height());
+			$('#background').height($(window).height() - window.pageYOffset);
 			$('#header_wrapper').css('min-height', $('#header')
 				.height() + 2 * $('#nav_scroll_bar').height());
 
