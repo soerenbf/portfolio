@@ -10,6 +10,7 @@ var LayoutManager = (function() {
 			var pwLower = $('div#prev_work_items_lower');
 
 			for (var i = 0; i < workItems.length; i++) {
+				//Set parent to lower/upper depending on odd or even number.
 				var parent = i % 2 === 0 ? pwUpper : pwLower;
 				$(_makePortfolioItem(workItems[i])).appendTo(parent);
 			}
@@ -20,6 +21,18 @@ var LayoutManager = (function() {
 			workArray = workItems;
 
 			updateLayout();
+		}
+
+		var layoutSkillsSection = function(skills) {
+			var parent = $('div#skills');
+
+			for (var i = 0; i < skills.length; i++) {
+				$(_makeSkillSection(skills[i])).appendTo(parent);
+			}
+
+			if(workArray) {
+				updateLayout();
+			}
 		}
 
 		var _makePortfolioItem = function(portfolioItem) {
@@ -66,6 +79,18 @@ var LayoutManager = (function() {
 			$(pwItem).attr('data-color', portfolioItem['color_hex']);
 
 			return pwItem;
+		}
+
+		var _makeSkillSection = function(skillsByCategory) {
+			console.log(skillsByCategory);
+
+			/*<div id="<id_name>" class="skill_category">
+				<h2>
+					<category_name> >
+				</h2>
+			</div>*/
+
+
 		}
 
 		var updateLayout = function() {
@@ -115,6 +140,7 @@ var LayoutManager = (function() {
 
 		//Exports
 		this.layoutPortfolio = layoutPortfolio;
+		this.layoutSkillsSection = layoutSkillsSection;
 		this.updateLayout = updateLayout;
 		this.changeThemeColor = changeThemeColor;
 

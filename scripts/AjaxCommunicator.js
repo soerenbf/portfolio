@@ -18,9 +18,13 @@ var AjaxCommunicator = (function(AjaxRequest) {
 			_sendGetRequest(backendUrl + '/getPortfolioCategories', callback);
 		}
 
+		var getSkills = function(callback) {
+			_sendGetRequest(backendUrl + '/getSkills', callback);
+		}
+
 		var _sendGetRequest = function(url, callback) {
 			var ajaxReq = new AjaxRequest();
-			
+
 			ajaxReq.onload = function() {
 				callback(_parseObjectToArray(JSON.parse(this.responseText)));
 			}
@@ -43,6 +47,7 @@ var AjaxCommunicator = (function(AjaxRequest) {
 		this.getPortfolioPostById = getPortfolioPostById;
 		this.getPortfolioCategories = getPortfolioCategories;
 		this.getPortfolioPostsFromCategories = getPortfolioPostsFromCategories;
+		this.getSkills = getSkills;
 
 	}
 })(window.XMLHttpRequest);

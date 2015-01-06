@@ -13,6 +13,7 @@ $(document).ready(function() {
 
 	//Get the items from the backend.
 	ajaxComm.getPortfolio(layoutManager.layoutPortfolio);
+	ajaxComm.getSkills(layoutManager.layoutSkillsSection);
 
 	/* ---------------- Global document wide event handling. ---------------- */
 	$(window).on('resize', function(event) {
