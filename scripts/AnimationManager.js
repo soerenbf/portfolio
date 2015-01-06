@@ -27,7 +27,7 @@ var AnimationManager = (function() {
       if (shouldShow) {
         $('#skill_description').html(elem.data('desc'));
       } else {
-        $('#skill_description').html('');
+        $('#skill_description').html('&#8606; Hover them...');
       }
     }
 
