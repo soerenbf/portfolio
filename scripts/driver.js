@@ -31,5 +31,13 @@ $(document).ready(function() {
 		animationManager.togglePrevWorkItemDescription($(this), false);
 	});
 
+	$("#skills").on('mouseenter', '.skill',function() {
+		animationManager.toggleAnimatingBackground($(this), true);
+		animationManager.toggleSkillDescription($(this), true);
+	}).on('mouseleave', '.skill',function() {
+		animationManager.toggleAnimatingBackground($(this), false);
+		animationManager.toggleSkillDescription($(this), false);
+	});
+
 	//Enable filtering on categories when clicking them.
 });

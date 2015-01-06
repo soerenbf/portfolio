@@ -8,6 +8,10 @@ body {
   color: #3498db;
   font-size: 50px;
 }
+body p {
+  font: 16px/20px 'Lato', 'Trebuchet MS', 'Sans serif';
+  color: #34495e;
+}
 body h1 {
   font-size: 50px;
   font-family: 'Lato', 'Trebuchet MS', 'Sans serif';
@@ -215,4 +219,32 @@ body h2 {
 }
 #content_area #skills {
   padding-top: 0px;
+}
+#content_area #skills .skill_category {
+  margin: 20px 0;
+}
+#content_area #skills .skill_category .skill {
+  width: 280px;
+  height: 30px;
+  border: 2px solid rgba(0, 0, 0, 0.3);
+  margin: 5px 0;
+  background: url('../images/test.png') repeat-x;
+}
+#content_area #skills #skill_description_wrapper {
+  position: relative;
+  top: 48px;
+}
+#content_area #skills #skill_description_wrapper p {
+  padding: 0 70px;
+  text-align: justify;
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+#content_area #about_wrapper {
+  border-bottom: none;
 }

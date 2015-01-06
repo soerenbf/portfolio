@@ -24,11 +24,28 @@ var LayoutManager = (function() {
 		}
 
 		var layoutSkillsSection = function(skills) {
-			var parent = $('div#skills');
+			var parent = document.createElement('div');
+			$(parent).attr({
+				id : 'skill_categories_wrapper',
+				class : 'grid_5'
+			})
+				.appendTo($('div#skills'));
 
 			for (var i = 0; i < skills.length; i++) {
 				$(_makeSkillSection(skills[i])).appendTo(parent);
 			}
+
+			var descAreaItem = document.createElement('div');
+			$(descAreaItem).attr({
+					id : 'skill_description_wrapper',
+					class : 'grid_8 push_2'
+				})
+				.appendTo($('div#skills'));
+
+				var skillDesc = document.createElement('p');
+				$(skillDesc).attr('id', 'skill_description')
+					.html('Hover over the different experience bars to see what each skill covers!')
+					.appendTo($(descAreaItem));
 
 			if(workArray) {
 				updateLayout();
@@ -81,8 +98,7 @@ var LayoutManager = (function() {
 			return pwItem;
 		}
 
-		var _makeSkillSection = function(skillsByCategory) {
-			console.log(skillsByCategory);
+		var _makeSkillSection = function(skills) {
 
 			/*<div id="<id_name>" class="skill_category">
 				<h2>
@@ -90,6 +106,32 @@ var LayoutManager = (function() {
 				</h2>
 			</div>*/
 
+			var skillCatItem = document.createElement('div');
+			$(skillCatItem).attr('id', skills['catIdName'])
+				.addClass('skill_category');
+
+				var skillCatHeader = document.createElement('h2');
+				$(skillCatHeader).html(skills['catName'] + ' >')
+					.appendTo($(skillCatItem));
+
+				//For every skill in the object, add a skill item.
+				var i = 0;
+				for (var key in skills) {
+					if (i < _.size(skills) - 2) { //Subtract 2 to filter out the last 2 keys of the object.
+						var skill = skills[key];
+
+						console.log(skill);
+
+						var skillItem = document.createElement('div');
+						$(skillItem).addClass('skill')
+							.attr('data-desc', skill['description'])
+							.appendTo($(skillCatItem));
+
+						i++;
+					}
+				}
+
+			return skillCatItem;
 
 		}
 
@@ -120,6 +162,9 @@ var LayoutManager = (function() {
 
 			//Position the #work_timeline_scroller correctly. Position:absolute.
 			$('#work_timeline_scroller').css('top', ($('div#prev_work_items_wrapper').height() / 2) + $('#prev_work_header').outerHeight(true) - ($('#work_timeline_scroller').outerHeight(true) / 2)); //Position it in the middle of #prev_work_items_wrapper.
+
+			//Size the skill_description_wrapper correctly according to the size of the skill categories.
+			$('#skill_description_wrapper').height($('#skill_categories_wrapper').height() - 48 - 20 - 6); // - top position and 3px border of #skill_description_wrapper and margin-bottom of #skill_categories_wrapper.
 		}
 
 		var changeThemeColor = function(color, animated) {

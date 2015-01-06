@@ -16,6 +16,7 @@
 @main_theme_color: @blue;
 
 @code_font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
+@lato_font-family: 'Lato', 'Trebuchet MS', 'Sans serif';
 
 @scroll_bar_height: 60px;
 @scrolling_nav_width: 300px;
@@ -29,6 +30,11 @@ body {
 	background: @white;
 	color: @main_theme_color;
 	font-size: 50px;
+
+	p {
+		font: 16px/20px @lato_font-family;
+		color: @dark_blue;
+	}
 
 	h1 {
 		font-size: 50px;
@@ -271,5 +277,38 @@ body {
 
 	#skills {
 		padding-top: 0px;
+
+		.skill_category {
+
+			margin: 20px 0;
+
+			.skill {
+				width: 280px;
+				height: 30px;
+				border: 2px solid @black_trans;
+				margin: 5px 0;
+				background: url('../images/test.png') repeat-x;
+			}
+		}
+
+		#skill_description_wrapper {
+			position:relative; top: 48px;
+
+			p {
+				padding: 0 70px;
+				text-align: justify;
+				position: relative; top: 50%;
+
+				-webkit-transform: translateY(-50%);
+				-moz-transform:    translateY(-50%);
+				-ms-transform:     translateY(-50%);
+				-o-transform:      translateY(-50%);
+				transform:         translateY(-50%);
+			}
+		}
+	}
+
+	#about_wrapper {
+		border-bottom: none;
 	}
 }
