@@ -10,6 +10,8 @@ var ScrollManager = (function(x, y, scrollingNav, prevWork, workScrollerEl) {
 		var init = function() {
 			workScroller = new WorkScroller(handleWorkScroll);
 			scrollingNav = new ScrollingNav();
+
+			handleScroll(); //To initiate page correctly in case of refresh.
 		}
 
 		var handleScroll = function(scrollEvent) {

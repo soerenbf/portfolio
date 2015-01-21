@@ -142,7 +142,17 @@ body {
 
 		#scrolling_nav {
 			width: 100%; height: 100%;
-			background: @black_trans;
+			//background: @black_trans;
+
+			.nav_item {
+
+				p {
+					font-size: 20px;
+					color: @white;
+					text-align: center;
+					position:relative; top: 20px;
+				}
+			}
 		}
 	}
 }
@@ -295,7 +305,7 @@ body {
 				margin: 5px 0;
 
 				.xp_bar {
-					background: @main_theme_color url('../images/xp_bg.png') repeat-x;
+					background: @main_theme_color url('../images/backgrounds/xp_bg.png') repeat-x;
 					height: 100%;
 				}
 			}

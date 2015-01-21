@@ -4,6 +4,9 @@ var LayoutManager = (function() {
 		var workArray;
 		var firstLoad = true;
 
+		var portfolioDone = false;
+		var skillsDone = false;
+
 		var layoutPortfolio = function(workItems) {
 			//Lay out the prev_work_item elements using the 'zig-zag' layout.
 			var pwUpper = $('div#prev_work_items_upper');
@@ -21,6 +24,8 @@ var LayoutManager = (function() {
 			workArray = workItems;
 
 			updateLayout();
+
+			portfolioDone = true;
 		}
 
 		var layoutSkillsSection = function(skills) {
@@ -47,9 +52,11 @@ var LayoutManager = (function() {
 					.html('Hover over the different experience bars to see what each skill covers!')
 					.appendTo($(descAreaItem));
 
-			if(workArray) {
+			if(portfolioDone) {
 				updateLayout();
 			}
+
+			skillsDone = true;
 		}
 
 		var _makePortfolioItem = function(portfolioItem) {
@@ -190,6 +197,10 @@ var LayoutManager = (function() {
 					'background-color' : themeColor,
 					'color' : '#ecf0f1'
 				});
+			}
+
+			if (skillsDone && portfolioDone) {
+				scrollManager.handleScroll();
 			}
 		}
 
