@@ -12,7 +12,7 @@ var AnimationManager = (function() {
 
     var toggleAnimatingBackground = function(elem, shouldAnimate) {
       if (shouldAnimate) {
-        animateElement = elem;
+        animateElement = elem.find('.xp_bar');
         animateInterval = setInterval(_animateBackground, 10);
       } else {
         clearInterval(animateInterval);

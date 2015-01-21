@@ -27,7 +27,7 @@ var LayoutManager = (function() {
 			var parent = document.createElement('div');
 			$(parent).attr({
 				id : 'skill_categories_wrapper',
-				class : 'grid_5'
+				class : 'grid_6'
 			})
 				.appendTo($('div#skills'));
 
@@ -38,7 +38,7 @@ var LayoutManager = (function() {
 			var descAreaItem = document.createElement('div');
 			$(descAreaItem).attr({
 					id : 'skill_description_wrapper',
-					class : 'grid_8 push_2'
+					class : 'grid_8 push_1'
 				})
 				.appendTo($('div#skills'));
 
@@ -120,7 +120,10 @@ var LayoutManager = (function() {
 					if (i < _.size(skills) - 2) { //Subtract 2 to filter out the last 2 keys of the object.
 						var skill = skills[key];
 
-						console.log(skill);
+						var skillHeader = document.createElement('h3');
+						$(skillHeader).addClass('skill_header')
+							.html(skill['name'])
+							.appendTo($(skillCatItem));
 
 						var skillItem = document.createElement('div');
 						$(skillItem).addClass('skill')
@@ -128,6 +131,13 @@ var LayoutManager = (function() {
 							.appendTo($(skillCatItem));
 
 						i++;
+
+							var skillItemWidth = 280;
+
+							var xpBar = document.createElement('div');
+							$(xpBar).addClass('xp_bar')
+								.width((skillItemWidth / 100) * parseInt(skill['skillLevel']))
+								.appendTo($(skillItem));
 					}
 				}
 

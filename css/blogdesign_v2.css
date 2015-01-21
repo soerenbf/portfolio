@@ -20,14 +20,19 @@ body h1 {
 body h2 {
   font-size: 20px;
   font-family: 'Lato', 'Trebuchet MS', 'Sans serif';
-  color: rgba(0, 0, 0, 0.3);
+  color: rgba(0, 0, 0, 0.5);
+}
+body h3 {
+  font-size: 12px;
+  font-family: 'Lato', 'Trebuchet MS', 'Sans serif';
+  color: rgba(0, 0, 0, 0.5);
 }
 .obj-c,
 .swift {
   color: #000;
   font: 14px/24px Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
   text-align: left;
-  margin: 100px 0 25px 0;
+  margin: 100px 10px 25px 10px;
 }
 .obj-c h1,
 .swift h1 {
@@ -227,7 +232,10 @@ body h2 {
   height: 30px;
   border: 2px solid rgba(0, 0, 0, 0.3);
   margin: 5px 0;
-  background: url('../images/test.png') repeat-x;
+}
+#content_area #skills .skill_category .skill .xp_bar {
+  background: #3498db url('../images/xp_bg.png') repeat-x;
+  height: 100%;
 }
 #content_area #skills #skill_description_wrapper {
   position: relative;

@@ -45,7 +45,13 @@ body {
 	h2 {
 		font-size: 20px;
 		font-family: 'Lato', 'Trebuchet MS', 'Sans serif';
-		color: @black_trans;
+		color: rgba(0, 0, 0, 0.5);
+	}
+
+	h3 {
+		font-size: 12px;
+		font-family: 'Lato', 'Trebuchet MS', 'Sans serif';
+		color: rgba(0, 0, 0, 0.5);
 	}
 }
 
@@ -55,7 +61,7 @@ body {
 	color: #000;
 	font: 14px/24px @code_font-family;
 	text-align: left;
-	margin: 100px 0 25px 0;
+	margin: 100px 10px 25px 10px; //10px to each side to align with 960 grid.
 
 	h1 {
 		color: #000;
@@ -287,7 +293,11 @@ body {
 				height: 30px;
 				border: 2px solid @black_trans;
 				margin: 5px 0;
-				background: url('../images/test.png') repeat-x;
+
+				.xp_bar {
+					background: @main_theme_color url('../images/xp_bg.png') repeat-x;
+					height: 100%;
+				}
 			}
 		}
 
