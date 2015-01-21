@@ -130,14 +130,14 @@ var LayoutManager = (function() {
 							.attr('data-desc', skill['description'])
 							.appendTo($(skillCatItem));
 
-						i++;
-
 							var skillItemWidth = 280;
 
 							var xpBar = document.createElement('div');
 							$(xpBar).addClass('xp_bar')
 								.width((skillItemWidth / 100) * parseInt(skill['skillLevel']))
 								.appendTo($(skillItem));
+
+						i++;
 					}
 				}
 
