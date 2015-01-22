@@ -227,27 +227,30 @@ body h3 {
   font-size: 20px;
   cursor: pointer;
 }
-#content_area #skills {
+#content_area #skills_wrapper {
+  border-bottom: none;
+}
+#content_area #skills_wrapper #skills {
   padding-top: 0px;
 }
-#content_area #skills .skill_category {
+#content_area #skills_wrapper #skills .skill_category {
   margin: 20px 0;
 }
-#content_area #skills .skill_category .skill {
+#content_area #skills_wrapper #skills .skill_category .skill {
   width: 280px;
   height: 30px;
   border: 2px solid rgba(0, 0, 0, 0.3);
   margin: 5px 0;
 }
-#content_area #skills .skill_category .skill .xp_bar {
+#content_area #skills_wrapper #skills .skill_category .skill .xp_bar {
   background: #3498db url('../images/backgrounds/xp_bg.png') repeat-x;
   height: 100%;
 }
-#content_area #skills #skill_description_wrapper {
+#content_area #skills_wrapper #skills #skill_description_wrapper {
   position: relative;
   top: 48px;
 }
-#content_area #skills #skill_description_wrapper p {
+#content_area #skills_wrapper #skills #skill_description_wrapper p {
   padding: 0 70px;
   text-align: justify;
   position: relative;
@@ -258,6 +261,7 @@ body h3 {
   -o-transform: translateY(-50%);
   transform: translateY(-50%);
 }
-#content_area #about_wrapper {
+#content_area #contact_wrapper {
   border-bottom: none;
+  background: #4c4c4c;
 }

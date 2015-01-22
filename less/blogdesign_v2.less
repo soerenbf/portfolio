@@ -4,6 +4,7 @@
 @white_trans: rgba(255, 255, 255, 0.1);
 
 @grey: #bdc3c7;
+@dark_grey: #4c4c4c;
 
 //Theming colors.
 @red: #c0392b;
@@ -291,44 +292,49 @@ body {
 		}
 	}
 
-	#skills {
-		padding-top: 0px;
+	#skills_wrapper {
+		border-bottom: none;
 
-		.skill_category {
+		#skills {
+			padding-top: 0px;
 
-			margin: 20px 0;
+			.skill_category {
 
-			.skill {
-				width: 280px;
-				height: 30px;
-				border: 2px solid @black_trans;
-				margin: 5px 0;
+				margin: 20px 0;
 
-				.xp_bar {
-					background: @main_theme_color url('../images/backgrounds/xp_bg.png') repeat-x;
-					height: 100%;
+				.skill {
+					width: 280px;
+					height: 30px;
+					border: 2px solid @black_trans;
+					margin: 5px 0;
+
+					.xp_bar {
+						background: @main_theme_color url('../images/backgrounds/xp_bg.png') repeat-x;
+						height: 100%;
+					}
 				}
 			}
-		}
 
-		#skill_description_wrapper {
-			position:relative; top: 48px;
+			#skill_description_wrapper {
+				position:relative; top: 48px;
 
-			p {
-				padding: 0 70px;
-				text-align: justify;
-				position: relative; top: 50%;
+				p {
+					padding: 0 70px;
+					text-align: justify;
+					position: relative; top: 50%;
 
-				-webkit-transform: translateY(-50%);
-				-moz-transform:    translateY(-50%);
-				-ms-transform:     translateY(-50%);
-				-o-transform:      translateY(-50%);
-				transform:         translateY(-50%);
+					-webkit-transform: translateY(-50%);
+					-moz-transform:    translateY(-50%);
+					-ms-transform:     translateY(-50%);
+					-o-transform:      translateY(-50%);
+					transform:         translateY(-50%);
+				}
 			}
 		}
 	}
 
-	#about_wrapper {
+	#contact_wrapper {
 		border-bottom: none;
+		background: @dark_grey;
 	}
 }
