@@ -90,7 +90,10 @@ body h3 {
 }
 #background #header_wrapper #header #welcome_img {
   height: 300px;
-  background: #fff;
+}
+#background #header_wrapper #header #welcome_img img {
+  height: 100%;
+  overflow: hidden;
 }
 #nav_scroll_bar {
   width: 100%;
