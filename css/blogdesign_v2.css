@@ -1,0 +1,270 @@
+body,
+html {
+  height: 100%;
+  overflow-x: hidden;
+}
+body {
+  background: #ecf0f1;
+  color: #3498db;
+  font-size: 50px;
+}
+body p {
+  font: 16px/20px 'Lato', 'Trebuchet MS', 'Sans serif';
+  color: #34495e;
+}
+body h1 {
+  font-size: 50px;
+  font-family: 'Lato', 'Trebuchet MS', 'Sans serif';
+  color: #ecf0f1;
+}
+body h2 {
+  font-size: 20px;
+  font-family: 'Lato', 'Trebuchet MS', 'Sans serif';
+  color: rgba(0, 0, 0, 0.5);
+}
+body h3 {
+  font-size: 12px;
+  font-family: 'Lato', 'Trebuchet MS', 'Sans serif';
+  color: rgba(0, 0, 0, 0.5);
+}
+.obj-c,
+.swift {
+  color: #000;
+  font: 14px/24px Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
+  text-align: left;
+  margin: 100px 10px 25px 10px;
+}
+.obj-c h1,
+.swift h1 {
+  color: #000;
+  font: 14px/24px Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
+}
+.obj-c .class_or_var,
+.swift .class_or_var {
+  color: #e349a0;
+}
+.obj-c .property_or_self-defined,
+.swift .property_or_self-defined {
+  color: #77abab;
+}
+.obj-c .function,
+.swift .function {
+  color: #556464;
+}
+.obj-c .string,
+.swift .string {
+  color: #e74c3c;
+}
+.obj-c .type,
+.swift .type {
+  color: #9b59b6;
+}
+.indented {
+  position: relative;
+}
+#background {
+  position: fixed;
+  width: 100%;
+}
+#background #header_wrapper {
+  background: #bdc3c7;
+  border-bottom: none;
+  width: 100%;
+  height: 100%;
+}
+#background #header_wrapper #header {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+#background #header_wrapper #header .swift {
+  margin: 0;
+}
+#background #header_wrapper #header h1 {
+  color: #ecf0f1;
+  text-align: justify;
+}
+#background #header_wrapper #header #welcome_img {
+  height: 300px;
+}
+#background #header_wrapper #header #welcome_img img {
+  height: 100%;
+  overflow: hidden;
+}
+#nav_scroll_bar {
+  width: 100%;
+  height: 60px;
+  z-index: 200;
+  position: absolute;
+  background: #bdc3c7;
+}
+#nav_scroll_bar #scrolling_nav_wrapper {
+  position: relative;
+  width: 300px;
+  height: 60px;
+}
+#nav_scroll_bar #scrolling_nav_wrapper #scrolling_nav {
+  width: 100%;
+  height: 100%;
+}
+#nav_scroll_bar #scrolling_nav_wrapper #scrolling_nav .nav_item p {
+  font-size: 20px;
+  color: #ecf0f1;
+  text-align: center;
+  position: relative;
+  top: 20px;
+}
+#content_area {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  background: #ecf0f1;
+}
+#content_area .wrapper {
+  border-bottom: 6px dashed rgba(0, 0, 0, 0.3);
+}
+#content_area .content_section {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+#content_area #prev_work {
+  overflow: hidden;
+}
+#content_area #prev_work #prev_work_items_wrapper {
+  position: relative;
+}
+#content_area #prev_work #prev_work_items_wrapper #prev_work_items_upper {
+  border-bottom: #bdc3c7 solid 3px;
+}
+#content_area #prev_work #prev_work_items_wrapper #prev_work_items_lower_wrapper {
+  border-top: #bdc3c7 solid 3px;
+  margin-bottom: 100px;
+}
+#content_area #prev_work #prev_work_items_wrapper .prev_work_item {
+  width: 500px;
+  height: 350px;
+  background: #fff;
+  float: left;
+  margin: 75px 70px;
+  position: relative;
+  overflow: hidden;
+}
+#content_area #prev_work #prev_work_items_wrapper .prev_work_item h1 {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  background: #bdc3c7;
+  font-size: 20px;
+  color: #ecf0f1;
+  text-align: left;
+  text-indent: 60px;
+  line-height: 0;
+  padding: 30px 0;
+}
+#content_area #prev_work #prev_work_items_wrapper .prev_work_item h1 a {
+  color: #ecf0f1;
+  text-decoration: none;
+}
+#content_area #prev_work #prev_work_items_wrapper .prev_work_item h1 a:visited {
+  color: #ecf0f1;
+}
+#content_area #prev_work #prev_work_items_wrapper .prev_work_item .pw_item_category_icon {
+  width: 60px;
+  height: 60px;
+  background: rgba(0, 0, 0, 0.3);
+  position: absolute;
+  left: 0px;
+  top: 0px;
+}
+#content_area #prev_work #prev_work_items_wrapper .prev_work_item .pw_item_teaser {
+  background: rgba(0, 0, 0, 0.3);
+  width: 100%;
+  height: 290px;
+  position: absolute;
+  bottom: -290px;
+}
+#content_area #prev_work #prev_work_items_wrapper .prev_work_item .pw_item_teaser div {
+  float: left;
+}
+#content_area #prev_work #prev_work_items_wrapper .prev_work_item .pw_item_teaser .pw_item_info {
+  width: 58px;
+  height: 100%;
+}
+#content_area #prev_work #prev_work_items_wrapper .prev_work_item .pw_item_teaser .pw_item_info div {
+  width: 100%;
+}
+#content_area #prev_work #prev_work_items_wrapper .prev_work_item .pw_item_teaser .pw_item_info .pw_item_date {
+  height: 58px;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+}
+#content_area #prev_work #prev_work_items_wrapper .prev_work_item .pw_item_teaser .pw_item_description {
+  width: 440px;
+  height: 100%;
+}
+#content_area #prev_work #prev_work_items_wrapper .prev_work_item .pw_item_teaser .pw_item_description div {
+  width: 100%;
+}
+#content_area #prev_work #prev_work_items_wrapper .prev_work_item .pw_item_teaser .pw_item_description .pw_item_tags {
+  height: 58px;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+}
+#content_area #prev_work #work_timeline_scroller {
+  position: absolute;
+  background: #ecf0f1;
+  -moz-border-radius: 56px;
+  border-radius: 56px;
+  border: #bdc3c7 solid 6px;
+  padding: 32px 20px;
+  z-index: 100;
+  cursor: pointer;
+  color: #bdc3c7;
+}
+#content_area #prev_work #work_timeline_scroller span {
+  width: 65px;
+  font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
+  font-size: 20px;
+  cursor: pointer;
+}
+#content_area #skills_wrapper {
+  border-bottom: none;
+}
+#content_area #skills_wrapper #skills {
+  padding-top: 0px;
+}
+#content_area #skills_wrapper #skills .skill_category {
+  margin: 20px 0;
+}
+#content_area #skills_wrapper #skills .skill_category .skill {
+  width: 280px;
+  height: 30px;
+  border: 2px solid rgba(0, 0, 0, 0.3);
+  margin: 5px 0;
+}
+#content_area #skills_wrapper #skills .skill_category .skill .xp_bar {
+  background: #3498db url('../images/backgrounds/xp_bg.png') repeat-x;
+  height: 100%;
+}
+#content_area #skills_wrapper #skills #skill_description_wrapper {
+  position: relative;
+  top: 48px;
+}
+#content_area #skills_wrapper #skills #skill_description_wrapper p {
+  padding: 0 70px;
+  text-align: justify;
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+#content_area #contact_wrapper {
+  border-bottom: none;
+  background: #4c4c4c;
+}
