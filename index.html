@@ -1,106 +1,116 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-		<title>Søren&#039;s Universe - Design</title>
+<!DOCTYPE html>
+<html lang="en" ng-app="portfolio">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Portfolio for Søren Bruus Frank, cand.scient IT Product Development">
+    <meta name="author" content="Søren Bruus Frank">
+    <meta name="keywords" content="soren,søren,bruus,frank,portfolio,web,it,product development,design,programming,projects">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta property="og:title" content="Portfolio: Søren Bruus Frank">
+    <meta property="og:url" content="http://sorenbf.dk">
+    <meta property="og:image" content="http://sorenbf.dk/images/profile/awkward_smile.jpg">
+    <meta property="og:description" content="Check out the portfolio of Søren Bruus Frank, M. Sc. IT Product Development.">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Søren&#039;s Portfolio</title>
 
-		<!--CSS-->
-		<link href="css/blogdesign_v2.css" rel="stylesheet" type="text/css" />
-		<link href="css/reset.css" rel="stylesheet" type="text/css" />
-		<link rel="stylesheet" type="text/css" href="css/960.css">
+    <link rel="apple-touch-icon" sizes="57x57" href="images/icons/favicon.ico/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="images/icons/favicon.ico/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/icons/favicon.ico/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="images/icons/favicon.ico/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/icons/favicon.ico/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="images/icons/favicon.ico/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="images/icons/favicon.ico/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="images/icons/favicon.ico/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/icons/favicon.ico/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="images/icons/favicon.ico/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/icons/favicon.ico/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="images/icons/favicon.ico/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/icons/favicon.ico/favicon-16x16.png">
+    <link rel="manifest" href="images/icons/favicon.ico/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="images/icons/favicon.ico/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
 
-		<!--GOOGLE FONTS-->
+    <!-- Normalize html5 across browsers -->
+    <link rel="stylesheet" href="frameworks/normalize.css">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="frameworks/bootstrap.min.css">
+    <!-- Font-Awesome -->
+    <link rel="stylesheet" href="frameworks/font-awesome-4.5.0/css/font-awesome.min.css">
+    <!-- Application css -->
+    <link rel="stylesheet" href="portfolio.css" charset="utf-8">
+    <link rel="stylesheet" href="sections/header/header.css" charset="utf-8">
+    <link rel="stylesheet" href="sections/navigation/navigation.css" charset="utf-8">
+    <link rel="stylesheet" href="sections/navigation/tab/tab.css" charset="utf-8">
+    <link rel="stylesheet" href="sections/projects/projects.css" charset="utf-8">
+    <link rel="stylesheet" href="sections/projects/project/project.css" charset="utf-8">
+    <link rel="stylesheet" href="sections/projects/project/content/content.css" charset="utf-8">
+    <link rel="stylesheet" href="sections/about/about.css" charset="utf-8">
+    <link rel="stylesheet" href="sections/skills/skills.css" charset="utf-8">
+    <link rel="stylesheet" href="sections/skills/skill/skill.css" charset="utf-8">
+    <link rel="stylesheet" href="sections/footer/footer.css" charset="utf-8">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!--GOOGLE FONTS-->
 		<link href='https://fonts.googleapis.com/css?family=Lato:300' rel='stylesheet' type='text/css'>
-	</head>
+  </head>
+  <body  ng-controller="PortfolioController as pfCtrl" handle-scroll>
+    <div id="home"></div>
+    <div portfolio-header class="background" id="header-background"></div>
+    <div ng-include="'sections/navigation/navigation.html'" id="nav-bar"></div>
+    <div class="background" id="content-background">
+      <section portfolio-projects id="projects"></section>
+      <section portfolio-skills id="skills"></section>
+      <section portfolio-about id="about"></section>
+      <section ng-include="'sections/footer/footer.html'" id="footer"></section>
+    </div>
 
-	<body>
+    <!-- javascript -->
+    <!-- jQuery -->
+    <script src="frameworks/jquery-1.12.0.min.js"></script>
 
-		<section id="background">
-				<div id="header_wrapper" class="wrapper">
-					<div id="header" class="container_16 content_section clearfix">
-						<h1 class="grid_10">
-							<span class="swift"><span class="class_or_var">self</span>.<span class="function">init</span>();</span>
-							<br />
-							Who's there?...<br />Well, whoever you are... Welcome! I'm <span style="color: #e349a0;">Søren</span>, and this is my portfolio.</h1>
-						<div id="welcome_img" class="grid_5 push_1"></div>
-					</div>
-				</div>
-		</section>
+    <!-- AngularJS -->
+    <script src="frameworks/angular.min.js"></script>
+    <script src="frameworks/angular-ui-router.min.js"></script>
 
-		<section id="nav_scroll_bar">
-			<div id="scrolling_nav_wrapper">
-				<div id="scrolling_nav">
-					<div id="nav_home" class="nav_item"><p>Home</p></div>
-					<div id="nav_work" class="nav_item"><p>Work</p></div>
-					<div id="nav_skills" class="nav_item"><p>Skills</p></div>
-					<div id="nav_contact" class="nav_item"><p>Contact</p></div>
-				</div>
-			</div>
-		</section>
+    <!-- Fix sticky hover -->
+    <script src="util/fixstickyhover.js"></script>
 
-		<section id="content_area">
-			<!--Sections are made of: div.wrapper holding a div.container_16.content_section.clearfix-->
-			<div id="prev_work_wrapper" class="wrapper clearfix">
-				<div id="prev_work">
-					<div id="prev_work_header" class="swift indented clearfix">
-						<h1>
-							<span class="class_or_var">var</span> categories: [<span class="type">String</span>] = [<span id="category_array"></span>];
-						</h1>
-						<h1>
-							<span class="class_or_var">self</span>.<span class="property_or_self-defined">portfolio</span> = <span class="property_or_self-defined">Database</span>.<span class="function">getPortfolioFor</span>(name: <span class="string">"Søren"</span>, withCategories: categories, usingLayout: <span class="type">portfolioLayoutSidescroll</span>);
-						</h1>
-					</div>
-					<div id="prev_work_items_wrapper">
-						<div id="prev_work_items_upper" class="clearfix"></div>
-						<div id="prev_work_items_lower_wrapper" class="clearfix">
-							<div id="prev_work_items_lower" style="margin-left: 320px;"></div>
-						</div>
-					</div>
-					<div id="work_timeline_scroller"><span>2014<span></div>
-				</div>
-			</div>
+    <!-- Application root -->
+    <script src="portfolio.module.js"></script>
+    <script src="portfolio.js"></script>
 
-			<div id="skills_wrapper" class="wrapper clearfix">
-				<div class="swift indented clearfix">
-					<h1>
-						<span class="class_or_var">self</span>.<span class="property_or_self-defined">skills</span> = <span class="property_or_self-defined">Database</span>.<span class="function">getExperienceFor</span>(name: <span class="string">"Søren"</span>);
-					</h1>
-				</div>
-				<div id="skills" class="container_16 content_section clearfix">
-				</div>
-			</div>
+    <!-- Sections -->
+    <script src="sections/header/header-directive.js"></script>
+    <script src="sections/navigation/tab/tab.js"></script>
+    <script src="sections/navigation/tab/tab-directive.js"></script>
+    <script src="sections/projects/projects.js"></script>
+    <script src="sections/projects/projects-directive.js"></script>
+    <script src="sections/projects/category-filter.js"></script>
+    <script src="sections/projects/project/project-directive.js"></script>
+    <script src="sections/skills/skills.js"></script>
+    <script src="sections/skills/skills-directive.js"></script>
+    <script src="sections/skills/skill/skill.js"></script>
+    <script src="sections/skills/skill/skill-directive.js"></script>
+    <script src="sections/about/about.js"></script>
+    <script src="sections/about/about-directive.js"></script>
 
-			<div id="contact_wrapper" class="wrapper clearfix">
-				<div class="swift indented clearfix">
-					<h1>
-						<span class="class_or_var">self</span>.<span class="property_or_self-defined">emailForContactForm</span> = <span class="string">"soerenbf@gmail.com"</span>
-					</h1>
-				</div>
-				<div id="contact" class="container_16 content_section clearfix">
-				</div>
-			</div>
-		</section>
-
-		<!--SCRIPTS-->
-		<!--jQuery-->
-		<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-		<script src="https://code.jquery.com/ui/1.11.2/jquery-ui.min.js"></script>
-
-		<!--Underscore-->
-		<script type="text/javascript" src="scripts/underscore-min.js"></script>
-
-		<!--Modules-->
-		<script type="text/javascript" src="scripts/WheelListener.js"></script>
-		<script type="text/javascript" src="scripts/AjaxCommunicator.js"></script>
-		<script type="text/javascript" src="scripts/LayoutManager.js"></script>
-		<script type="text/javascript" src="scripts/ScrollManager.js"></script>
-		<script type="text/javascript" src="scripts/ScrollDisabler.js"></script>
-		<script type="text/javascript" src="scripts/WorkScroller.js"></script>
-		<script type="text/javascript" src="scripts/ScrollingNav.js"></script>
-		<script type="text/javascript" src ="scripts/AnimationManager.js"></script>
-
-		<!--Driver-->
-		<script type="text/javascript" src="scripts/driver.js"></script>
-
-	</body>
+    <!-- Reusable components -->
+    <script src="components/safeApply/safeApply.module.js"></script>
+    <script src="components/scroll/scroll.module.js"></script>
+    <script src="components/scroll/scroll-directive.js"></script>
+    <script src="components/backend/backend.module.js"></script>
+    <script src="components/backend/tabs/tabs-service.js"></script>
+    <script src="components/backend/projects/projects-service.js"></script>
+    <script src="components/backend/skills/skills-service.js"></script>
+    <script src="components/backend/about/about-service.js"></script>
+    </script>
+  </body>
 </html>
