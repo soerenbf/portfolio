@@ -1,0 +1,58 @@
+#header-background {
+  height: 100%;
+  z-index: 0;
+  position: absolute;
+  top: 0;
+}
+#header-background #header {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+#header-background #header #welcome-text {
+  display: none;
+}
+#header-background #header #welcome-text h1 {
+  text-align: right;
+  margin-top: 0;
+  max-width: 360px;
+}
+#header-background #header #welcome-img img {
+  width: 50%;
+  position: relative;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  transform: translateX(-50%);
+  overflow: hidden;
+}
+@media (min-width: 768px) {
+  #header-background #header #welcome-text {
+    display: block;
+  }
+  #header-background #header #welcome-img img {
+    left: 0;
+    -webkit-transform: translateX(0%);
+    -moz-transform: translateX(0%);
+    -ms-transform: translateX(0%);
+    -o-transform: translateX(0%);
+    transform: translateX(0%);
+  }
+}
+@media (min-width: 992px) {
+  #header-background #header #welcome-text h1 {
+    max-width: 470px;
+    font-size: 7em;
+  }
+}
+@media (min-width: 1200px) {
+  #header-background #header #welcome-text h1 {
+    max-width: 540px;
+  }
+}

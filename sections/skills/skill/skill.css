@@ -1,0 +1,104 @@
+.skill {
+  height: 100%;
+  opacity: 0;
+}
+.skill .character-wrapper {
+  height: 100%;
+}
+.skill .character-wrapper p.character-name {
+  font-size: 2.5em;
+  text-align: center;
+  color: #4c4c4c;
+  font-family: 'Lato', 'Trebuchet MS', 'Sans serif';
+}
+.skill .character-wrapper img {
+  height: 200px;
+  overflow: hidden;
+  position: absolute;
+  left: 50%;
+  z-index: 1;
+}
+.skill .character-wrapper img:hover {
+  cursor: pointer;
+}
+.skill .character-wrapper .character-bg {
+  z-index: 0;
+  background: rgba(0, 0, 0, 0.05);
+  height: 50px;
+  position: absolute;
+  bottom: 0px;
+}
+.skill.hovering {
+  opacity: 1;
+}
+.skill.hovering .character-wrapper .character-bg {
+  border-bottom: 1px solid #bdc3c7;
+}
+.skill.active {
+  opacity: 1;
+}
+.skill.active .character-wrapper p.character-name {
+  font-weight: bold;
+}
+.skill.active .character-wrapper .character-bg {
+  border-bottom: 1px solid #e74c3c;
+}
+#designing .character-wrapper p.character-name {
+  position: relative;
+  top: 40px;
+}
+#designing .character-wrapper img {
+  bottom: -22px;
+  -webkit-transform: translateX(-56%);
+  -moz-transform: translateX(-56%);
+  -ms-transform: translateX(-56%);
+  -o-transform: translateX(-56%);
+  transform: translateX(-56%);
+}
+#programming {
+  position: relative;
+  top: -100%;
+}
+#programming .character-wrapper p.character-name {
+  position: relative;
+  top: 0px;
+}
+#programming .character-wrapper img {
+  bottom: 0px;
+  -webkit-transform: translateX(-49%);
+  -moz-transform: translateX(-49%);
+  -ms-transform: translateX(-49%);
+  -o-transform: translateX(-49%);
+  transform: translateX(-49%);
+}
+#prototyping {
+  position: relative;
+  top: -200%;
+}
+#prototyping .character-wrapper p.character-name {
+  position: relative;
+  top: 50px;
+}
+#prototyping .character-wrapper img {
+  bottom: -29px;
+  -webkit-transform: translateX(-63%);
+  -moz-transform: translateX(-63%);
+  -ms-transform: translateX(-63%);
+  -o-transform: translateX(-63%);
+  transform: translateX(-63%);
+}
+@media (min-width: 768px) {
+  .skill {
+    opacity: 0.7;
+    -webkit-transition: 0.1s opacity linear;
+    -moz-transition: 0.1s opacity linear;
+    -o-transition: 0.1s opacity linear;
+    transition: 0.1s opacity linear;
+  }
+  #designing,
+  #programming,
+  #prototyping {
+    position: relative;
+    top: 0;
+  }
+}

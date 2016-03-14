@@ -1,0 +1,21 @@
+@import "../../util/util.less";
+
+body {
+  #projects {
+    h4.swift {
+      #category-array {
+        .project-category:hover {
+          cursor: pointer;
+          font-weight: bold;
+        }
+        .project-category span{
+          color: @main-theme-color;
+        }
+
+        .project-category.inactive span{
+          color: @grey;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,72 @@
+@import "../../../util/util.less";
+
+.tab {
+  font-family: @code-font-family;
+  font-size: 2em;
+  height: 30px;
+  overflow-y: hidden;
+  list-style-type: none;
+  width: 100%;
+  text-align: center;
+  color: @dark-grey;
+
+  transition: height 0.5s;
+  -webkit-transition: height 0.5s;
+
+  .nav-item {
+
+    .bracket {
+      font-size: 1.2em;
+      line-height: 30px;
+    }
+
+    .title {
+      position: relative; bottom: 1px;
+      line-height: 18px;
+      display: none;
+    }
+  }
+
+  .nav-item:hover {
+    cursor: pointer;
+  }
+
+  .nav-dots {
+    position: relative; top: -4px;
+    overflow: hidden;
+
+    .nav-dot {
+      font-family: @lato-font-family;
+      font-size: 2em;
+      line-height: 10px;
+      position: relative; top: -7px;
+      color: @dark-grey;
+    }
+
+    .nav-dot.invisible {
+      color: rgba(0, 0, 0, 0);
+    }
+  }
+}
+
+.tab.active {
+  color: @main-theme-color;
+}
+
+.tab.expanded {
+  height: 80px;
+}
+
+.tab.last.expanded {
+  height: 30px;
+}
+
+@media (min-width: 1400px) {
+  .tab {
+    .nav-item:hover {
+      .title {
+        display: inline;
+      }
+    }
+  }
+}

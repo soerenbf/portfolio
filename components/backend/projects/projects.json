@@ -1,0 +1,122 @@
+{
+  "categories": ["programming", "design", "game_design", "prototyping"],
+  "projects": [
+    {
+      "title": "Proximity based social networking concept",
+      "priority": 3,
+      "date": "Spring 2013",
+      "categories": [
+        "programming", "prototyping"
+      ],
+      "tags": [
+        "iOS", "Obj-C", "Bachelor's project", "Aarhus University", "Social network", "Concept", "Information sharing", "Study network"
+      ],
+      "teaserImg": "images/portfolioposts/sphere/sphere-header.png",
+      "site": "sections/projects/project/content/sphere.html"
+    },
+    {
+      "title": "The floating lamp",
+      "priority": 3,
+      "date": "Fall 2013",
+      "categories": [
+        "design", "prototyping"
+      ],
+      "tags": [
+        "Arduino", "Shape-change", "Physical design", "Prototyping", "Lamp design", "Proximity sensor", "Actuators", "Aarhus University"
+      ],
+      "teaserImg": "images/portfolioposts/shape-change/floating-lamp-header.png",
+      "site": "sections/projects/project/content/shape-change.html"
+    },
+    {
+      "title": "Pick up to cheer up",
+      "priority": 3,
+      "date": "Spring 2014",
+      "categories": [
+        "design"
+      ],
+      "tags": [
+        "Urban intervention", "Design for happiness", "Aarhus University", "Aarhus city"
+      ],
+      "teaserImg": "images/portfolioposts/urban-intervention/pick-up-header.png",
+      "site": "sections/projects/project/content/pick-up.html"
+    },
+    {
+      "title": "Peer-to-peer poem sharing network",
+      "priority": 3,
+      "date": "Spring 2014",
+      "categories": [
+        "programming"
+      ],
+      "tags": [
+        "Java", "Software architecture", "RPC", "P2P networking", "Aarhus University"
+      ],
+      "teaserImg": "images/portfolioposts/p2p/p2p-header.png",
+      "site": "sections/projects/project/content/p2p.html"
+    },
+    {
+      "title": "Volkswagen innovation project",
+      "priority": 3,
+      "date": "Spring 2014",
+      "categories": [
+        "design", "prototyping"
+      ],
+      "tags": [
+        "Innovation", "International", "UX Design", "Prototyping", "Volkswagen", "In-car technology", "Aarhus University"
+      ],
+      "teaserImg": "images/portfolioposts/volkswagen/vw-header.png",
+      "site": "sections/projects/project/content/volkswagen.html"
+    },
+    {
+      "title": "The Fez controller",
+      "priority": 3,
+      "date": "Fall 2014",
+      "categories": [
+        "design", "programming", "prototyping"
+      ],
+      "tags": [
+        "Arduino", "Java", "3D modelling", "3D printing", "Prototyping", "Fez game", "Game controller", "Aarhus University"
+      ],
+      "teaserImg": "images/portfolioposts/fez-controller/fez-controller-header.png",
+      "site": "sections/projects/project/content/fez-controller.html"
+    },
+    {
+      "title": "Virtaul reality labyrinth",
+      "priority": 3,
+      "date": "Spring 2015",
+      "categories": [
+        "programming", "game_design"
+      ],
+      "tags": [
+        "Virtual reality", "Oculus Rift", "Unity3D", "Leap motion", "3D modelling", "Aarhus University"
+      ],
+      "teaserImg": "images/portfolioposts/vr-labyrinth/vr-labyrinth-header.png",
+      "site": "sections/projects/project/content/vr-labyrinth.html"
+    },
+    {
+      "title": "Kite performance and evaluation",
+      "priority": 3,
+      "date": "Spring 2015",
+      "categories": [
+        "programming", "prototyping"
+      ],
+      "tags": [
+        "Kitesurfing", "Survey", "Kite analysis", "Strain guages", "Arduino", "Accelerometer", "Anemometer"
+      ],
+      "teaserImg": "images/portfolioposts/kite-performance/kite-performance-header.png",
+      "site": "sections/projects/project/content/kite-performance.html"
+    },
+    {
+      "title": "Voice controlled news",
+      "priority": 3,
+      "date": "Fall 2015",
+      "categories": [
+        "programming", "prototyping"
+      ],
+      "tags": [
+        "Master's thesis", "Javascript", "Node.js", "Innovation", "International", "Amazon Alexa", "Voice control", "Aarhus University", "Stibo Accelerator"
+      ],
+      "teaserImg": "images/portfolioposts/voice-controlled-news/echo-header.png",
+      "site": "sections/projects/project/content/voice-controlled-news.html"
+    }
+  ]
+}

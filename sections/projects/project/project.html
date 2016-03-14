@@ -1,0 +1,12 @@
+<!-- scope: project in ProjectsController.projects -->
+<div class="project-header">
+  <img ng-src="{{project.teaserImg}}" alt="" />
+  <h2>{{project.title}}</h2>
+  <div class="project-tags">
+    <span ng-repeat="tag in project.tags | orderBy" class="project-tag">{{tag}}</span>
+  </div>
+  <div class="project-date">
+    {{project.date}}
+  </div>
+</div>
+<div ng-include="project.site" class="project-content container"></div>

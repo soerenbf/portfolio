@@ -1,0 +1,114 @@
+@import "../../../util/util.less";
+
+.skill {
+  height: 100%;
+  opacity: 0;
+
+  .character-wrapper {
+    height: 100%;
+
+    p.character-name {
+      font-size: 2.5em;
+      text-align: center;
+      color: @dark-grey;
+      font-family: @lato-font-family;
+    }
+
+    img {
+      height: 200px;
+      overflow: hidden;
+      position: absolute; left: 50%;
+      z-index: 1;
+    }
+
+    img:hover {
+      cursor: pointer;
+    }
+
+    .character-bg {
+      z-index: 0;
+      background: @black-trans;
+      height: 50px;
+      position: absolute; bottom: 0px;
+    }
+  }
+}
+
+.skill.hovering {
+  opacity: 1;
+
+  .character-wrapper {
+    .character-bg {
+      border-bottom: 1px solid @grey;
+    }
+  }
+}
+
+.skill.active {
+  opacity: 1;
+
+  .character-wrapper {
+    p.character-name {
+      // color: @main-theme-color;
+      font-weight: bold;
+    }
+
+    .character-bg {
+      border-bottom: 1px solid @main-theme-color;
+    }
+  }
+}
+
+#designing {
+  .character-wrapper {
+    p.character-name {
+      position: relative; top: 40px;
+    }
+
+    img {
+      bottom: -22px;
+      .translate(translateX(-56%));
+    }
+  }
+}
+
+#programming {
+  position: relative; top: -100%;
+
+  .character-wrapper {
+    p.character-name {
+      position: relative; top: 0px;
+    }
+
+    img {
+      bottom: 0px;
+      .translate(translateX(-49%));
+    }
+  }
+}
+
+#prototyping {
+  position: relative; top: -200%;
+
+  .character-wrapper {
+    p.character-name {
+      position: relative; top: 50px;
+    }
+
+    img {
+      bottom: -29px;
+      .translate(translateX(-63%));
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .skill {
+    opacity: 0.7;
+    .transition(0.1s opacity linear);
+  }
+
+  #designing, #programming, #prototyping {
+    position: relative; top: 0;
+  }
+}

@@ -1,0 +1,10 @@
+body #projects h4.swift #category-array .project-category:hover {
+  cursor: pointer;
+  font-weight: bold;
+}
+body #projects h4.swift #category-array .project-category span {
+  color: #e74c3c;
+}
+body #projects h4.swift #category-array .project-category.inactive span {
+  color: #bdc3c7;
+}

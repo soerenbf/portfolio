@@ -1,0 +1,34 @@
+[
+  {
+    "left": "< ",
+    "right": " >",
+    "title": "home",
+    "active": true,
+    "expanded": false,
+    "element": "#home"
+  },
+  {
+    "left": "[ ",
+    "right": " ]",
+    "title": "projects",
+    "active": false,
+    "expanded": false,
+    "element": "#projects"
+  },
+  {
+    "left": "{ ",
+    "right": " }",
+    "title": "skills",
+    "active": false,
+    "expanded": false,
+    "element": "#skills"
+  },
+  {
+    "left": "( ",
+    "right": " )",
+    "title": "about",
+    "active": false,
+    "expanded": false,
+    "element": "#about"
+  }
+]

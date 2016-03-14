@@ -1,0 +1,11 @@
+#footer {
+  margin-top: 50px;
+}
+#footer p#copyright {
+  border-top: 2px solid rgba(0, 0, 0, 0.05);
+  font-family: 'Lato', 'Trebuchet MS', 'Sans serif';
+  font-size: 2em;
+  padding: 20px 0;
+  margin: 0;
+  text-align: center;
+}

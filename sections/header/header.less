@@ -1,0 +1,76 @@
+@import "../../util/util.less";
+
+#header-background {
+  height: 100%;
+  z-index: 0;
+  position: absolute; top: 0;
+
+  #header {
+    position: relative; top: 50%;
+    .translate(translateY(-50%));
+
+    #welcome-text {
+      display: none;
+
+      h1 {
+        text-align: right;
+        margin-top: 0;
+        max-width: 360px;
+      }
+    }
+
+    #welcome-img {
+      img {
+        width: 50%;
+        position: relative; left: 50%;
+        .translate(translateX(-50%));
+        // height: 100%;
+        overflow: hidden;
+      }
+    }
+  }
+}
+
+//Landscape tablets. This is where we start laying out the intended interface!
+@media (min-width: 768px) {
+  #header-background {
+	  #header {
+      #welcome-text {
+        display: block;
+      }
+
+      #welcome-img {
+        img {
+          left: 0;
+          .translate(translateX(0%));
+        }
+			}
+	  }
+	}
+}
+
+//Big screens.Everything increases in size.
+@media (min-width: 992px) {
+  #header-background {
+	  #header {
+			#welcome-text {
+				h1 {
+		      max-width: 470px;
+          font-size: 7em;
+				}
+			}
+	  }
+	}
+}
+
+@media (min-width: 1200px) {
+  #header-background {
+	  #header {
+			#welcome-text {
+				h1 {
+		      max-width: 540px;
+				}
+			}
+	  }
+	}
+}

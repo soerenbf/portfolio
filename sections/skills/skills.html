@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <h4 class="swift">
+        self.<span class="highlight">skills</span> = Database.getCharactersFor(name: "Søren");
+      </h4>
+    </div>
+  </div>
+  <div class="row content" id="skill-sections">
+    <div class="row" id="characters-wrapper">
+      <div portfolio-skill  ng-repeat="skill in vm.sections" ng-class="{active: vm.active}" class="skill col-xs-12 col-sm-4" id="{{vm.title}}"></div>
+      <div ng-click="vm.previousSkill()" class="skill-button" id="previous-skill-button">
+        <i class="fa fa-chevron-circle-left"></i>
+      </div>
+      <div ng-click="vm.nextSkill()" class="skill-button" id="next-skill-button">
+        <i class="fa fa-chevron-circle-right"></i>
+      </div>
+    </div>
+    <div class="row" id="skill-content">
+      <div class="wrapper col-xs-10 col-xs-offset-1 col-sm-5 col-sm-offset-0" id="tools">
+        <ul>
+          <li ng-repeat="tool in vm.activeSection.tools | orderBy">
+            {{tool}}
+          </li>
+        </ul>
+      </div>
+      <div class="wrapper col-xs-10 col-xs-offset-1 col-sm-7 col-sm-offset-0" id="description">
+        <p>{{vm.activeSection.description}}</p>
+      </div>
+    </div>
+  </div>
+</div>

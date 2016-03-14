@@ -1,0 +1,153 @@
+@import "../../util/util.less";
+
+body {
+  #about {
+    .content {
+      #about-image {
+        img {
+          width: 100%;
+        }
+      }
+
+      #about-icons {
+        margin-top: 10px;
+
+        .about-icon {
+          text-align: center;
+          padding-left: 5px; padding-right: 5px;
+
+          .fa {
+            font-size: 5em;
+            line-height: 1.5em;
+          }
+
+          a {
+            i {
+              // opacity: 0.5;
+              .transition(0.1s all linear);
+              // color: @main-theme-color;
+            }
+
+            i.fa-facebook {
+              color: #3a5795;
+            }
+
+            i.fa-github {
+              color: @dark-grey;
+            }
+
+            i.fa-envelope {
+              color: @main-theme-color;
+            }
+
+            i.fa-twitter {
+              color: #1da1f2;
+            }
+
+            i.fa-linkedin {
+              color: #287bbc;
+            }
+          }
+
+          a:hover {
+            i {
+              opacity: 1;
+              .transform(scale(1.3, 1.3));
+            }
+          }
+        }
+      }
+
+      #about-text {
+        p {
+          text-align: justify;
+          padding-top: 30px;
+        }
+
+        #secrets {
+          opacity: 1;
+          .transition(0.1s all linear);
+
+          p {
+            padding-top: 0px;
+          }
+        }
+
+        #secrets.ng-hide:not(.ng-hide-animate) {
+          display: block !important;
+          opacity: 0;
+        }
+
+        #documents {
+          height: 100px;
+        }
+      }
+    }
+
+    #contact {
+      margin-top: 30px;
+      height: 100px;
+      background: @grey;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  body {
+    #about {
+      .content {
+        #about-icons {
+          margin-top: 12.5px;
+        }
+
+        #about-text {
+          p {
+            padding-top: 0;
+          }
+
+          #documents {
+            margin-top: -20px;
+            height: 50px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  body {
+    #about {
+      .content {
+        #about-icons {
+          margin-top: 46.5px;
+        }
+
+        #about-text {
+          #documents {
+            margin-top: 20px;
+            height: 100px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  body {
+    #about {
+      .content {
+        #about-icons {
+          margin-top: 65px;
+        }
+
+        #about-text {
+          #documents {
+            margin-top: 30px;
+          }
+        }
+      }
+    }
+  }
+}

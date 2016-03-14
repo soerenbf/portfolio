@@ -1,0 +1,34 @@
+@import "../../util/util.less";
+
+//Start by not displaying on mobile.
+#nav-bar {
+  display: none;
+  z-index: 1;
+  position: fixed; right: 0; top: 50%; //Changed in js, is there to form the initial picture.
+  .translate(translateY(-50%));
+
+  ul {
+    padding: 0px;
+    margin: 0;
+  }
+}
+
+//Display the navbar for landscape tablets and desktops
+@media (min-width: 768px) {
+  #nav-bar {
+    display: block;
+
+    ul {
+      width: 35px;
+    }
+  }
+}
+
+@media (min-width: 1400px) {
+  #nav-bar {
+    ul {
+      width: 100px;
+      margin-right: 10px;
+    }
+  }
+}

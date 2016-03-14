@@ -1,0 +1,56 @@
+//Colors.
+@white: #ecf0f1;
+@black-trans: rgba(0, 0, 0, 0.05);
+@teaser-trans: rgba(0, 0, 0, 0.7);
+@white-trans: rgba(255, 255, 255, 0.1);
+
+@grey: #bdc3c7;
+@dark-grey: #4c4c4c;
+
+//Theming colors.
+@red: #e74c3c;
+@blue: #3498db;
+@green: #16a085;
+@grass-green: #27ae60;
+@yellow: #f1c40f;
+@dark-blue: #34495e;
+@turquoise: #1dd2af;
+
+//Theme.
+@main-theme-color: @red;
+
+@code-font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
+@lato-font-family: 'Lato', 'Trebuchet MS', 'Sans serif';
+@raleway-font-family: 'Raleway', 'Helvetica', 'Arial', 'sans-serif';
+
+//Dimensions
+@scroll-bar-height: 60px;
+@scrolling-nav-width: 150px;
+
+//Mixins.
+.translate(@value) {
+  -webkit-transform: @value;
+  -moz-transform:    @value;
+  -ms-transform:     @value;
+  -o-transform:      @value;
+  transform:         @value;
+}
+
+.transition(@value) {
+  -webkit-transition:@value;
+  -moz-transition:@value;
+  -o-transition:@value;
+  transition:@value;
+}
+
+.transform(@value) {
+  -ms-transform: @value; /* IE 9 */
+  -webkit-transform: @value; /* Safari */
+  transform: @value;
+}
+
+.drop-shadow(@h, @v, @blur, @spread, @color) {
+  -webkit-box-shadow: @h @v @blur @spread @color;
+  -moz-box-shadow: @h @v @blur @spread @color;
+  box-shadow: @h @v @blur @spread @color;
+}

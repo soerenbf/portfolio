@@ -1,0 +1,15 @@
+<!-- portfolio-projects directive template. ProjectsController as vm -->
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <h4 class="swift">
+        var categories: [String] =
+        [<span id="category-array"><span ng-repeat="category in vm.categories" class="project-category" id="{{category.name}}"><span>"{{category.name}}"<span ng-if="!$last">, </span></span></span></span>];<br />
+        self.<span class="highlight">projects</span> = Database.getProjectsFor(name: "Søren", withCategories: categories<!--, sortBy: <span class="interactive" ng-click="vm.nextSortDescriptor()">{{vm.sortBy}}</span>-->);
+      </h4>
+    </div>
+  </div>
+  <div class="row content">
+    <div portfolio-project ng-repeat="project in vm.projects | categoryFilter: vm.activeCategory" class="project col-xs-12 col-sm-6 col-md-4"></div>
+  </div>
+</div>

@@ -1,0 +1,32 @@
+[
+  {
+    "title": "designing",
+    "character": {
+      "name": "Søren, the concept-designing knight",
+      "img": "images/characters/knight2.svg",
+      "quote": "Design with honor..."
+    },
+    "tools": ["Business Model Canvas", "Workshops", "Contextual inquiry", "User experience", "Usability testing", "Field testing", "Ideation", "Agile development processes", "Iterative development"],
+    "description": "Dveloping great IT products starts by having a great concept, developed through a development process consisting of various creative, design, and validation elements. Through my studies the focus in all innovation and design projects has been on the specific elements of design processes. I have both theoretical and practical knowledge and experience with these elements, and am capable of designing concepts through participatory design elements incorporating users from the beginning to the end. I love being part of the development of IT products in the concept development phase, just as much as I love implementing the actual solution."
+  },
+  {
+    "title": "programming",
+    "character": {
+      "name": "Søren, the coding wizard",
+      "img": "images/characters/wizard1.svg",
+      "quote": "Coding takes wisdom... and a great deal of magic!"
+    },
+    "tools": ["Javascript", "Java", "Obj-C", "C#", "HTML", "css", "less", "swift", "SQL", "AngularJS", "jQuery", "node.js", "iOS", "Android", "Arduino", "Unity3D", "MVC", "Software patterns", "Relational databases", "Object oriented programming"],
+    "description": "I have loved technology since I can remember. As such, programming has felt like a natural interest to me ever since I started doing it. Through my university studies, I have had a focus mainly on software development and the process of developing software embedded solutions. What I really love about programming and developing software is implementing solutions conforming to best practice in terms of maintainability, software patterns and readability. As such, I always strive to write reusable code that I myself and others will understand."
+  },
+  {
+    "title": "prototyping",
+    "character": {
+      "name": "Søren, the prototyping warrior",
+      "img": "images/characters/dwarf2.svg",
+      "quote": "Prototype... RAWR?!"
+    },
+    "tools": ["Low Fidelity prototyping", "Rapid prototyping", "Arduino", "High Fidelity prototyping", "Physical design", "Low power electronics", "Phidgets", "Actuators", "Sensors"],
+    "description": "As my time at Aarhus University has been very project and product/prototype oriented in general, I am accustomed to both high and low fidelity prototyping using various technologies both including paper prototypes, interactive prototypes, and physical prototypes. I have worked with various sensors and actuators to make prototypes such as a \"shape-changing interface\", but also software prototypes used to test certain aspects of concepts in the development process."
+  }
+]

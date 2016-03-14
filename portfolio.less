@@ -1,0 +1,210 @@
+@import "util/util.less";
+
+/**
+* The website takes a mobile-first approach, scaling up and showing more elements and different layouts as the screen size grows.
+*/
+body, html {
+  height:100%;
+}
+
+p::selection, h1::selection, h2::selection, li::selection {
+  background: @main-theme-color;
+  color: @white;
+}
+
+p::moz-selection, h1::moz-selection, h2::moz-selection, li::moz-selection {
+  background: @main-theme-color;
+  color: @white;
+}
+
+h1 {
+  span::selection {
+    background: @main-theme-color;
+    color: @white;
+  }
+}
+
+h1 {
+  span::moz-selection {
+    background: @main-theme-color;
+    color: @white;
+  }
+}
+
+body {
+  background: @white;
+  color: @dark-grey;
+  font-size: 50%;
+  line-height: 18px;
+  min-width: 300px;
+
+  span.highlight {
+    color: @main-theme-color;
+  }
+
+  p {
+    font-family: @lato-font-family;
+    color: @dark-grey;
+    font-size: 2.5em;
+    line-height: 1.5em;
+  }
+
+  a {
+    color: @red;
+  }
+
+  a:hover {
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  a:visited {
+    color: @red;
+    text-decoration: none;
+  }
+
+  h1 {
+    font-family: @lato-font-family;
+    font-weight: 100;
+    color: @dark-grey;
+    font-size: 5.5em;
+  }
+
+  h2 {
+    font-family: @lato-font-family;
+    font-weight: 100;
+    color: @dark-grey;
+    font-size: 3em;
+  }
+
+  h3 {
+    font-family: @lato-font-family;
+    font-weight: 100;
+    color: rgba(0, 0, 0, 0.5);
+    font-size: 2em;
+  }
+
+  h4.swift { //The code font.
+    color: @dark-grey;
+    font-family: @code-font-family;
+    margin: 20px 0px;
+    font-size: 1.6em;
+    line-height: 2.5em;
+    text-align: left;
+
+    .class-or-var {
+      // color: @blue;
+    }
+
+    .property-or-self-defined {
+      // color: #77abab;
+    }
+
+    .function {
+      // color: #556464;
+    }
+
+    .interactive {
+      color: @main-theme-color;
+    }
+
+    .interactive:hover {
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .type {
+      // color: #9b59b6;
+    }
+
+    span::selection {
+      background: rgba(0,0,0,0);
+      color: #27ae60;
+    }
+
+    span::moz-selection {
+      background: rgba(0,0,0,0);
+      color: #27ae60;
+    }
+  }
+
+  h4::selection {
+    // background: #2c3e50;
+    background: rgba(0,0,0,0);
+    color: #27ae60;
+  }
+
+  h4::moz-selection {
+    background: rgba(0,0,0,0);
+    color: #27ae60;
+  }
+
+  .document {
+    height: 100%;
+    font-size: 2em;
+    font-family: @lato-font-family;
+    text-align: center;
+
+    a {
+      color: @dark-grey;
+
+      img {
+        width: 50%;
+        display: block;
+        position: relative; left: 50%;
+        .translate(translateX(-50%));
+      }
+    }
+
+    a:hover, a:visited {
+      text-decoration: none;
+    }
+
+    a:hover {
+      font-weight: bold;
+    }
+  }
+
+  .indented {
+    position: relative;
+  }
+
+  .background {
+    width: 100%;
+  }
+
+  .test {
+    background: @grey;
+  }
+
+  #content-background {
+    z-index: 0;
+    background: @white;
+    position: relative; top: 100%;
+
+    section.placeholder {
+      height: 400px;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  body {
+    h4.swift {
+      font-size: 2.2em;
+      margin: 50px 0px;
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  body {
+    font-size: 52%;
+  }
+}
+
+@media (min-width: 1200px) {
+  body {
+    font-size: 60%;
+  }
+}

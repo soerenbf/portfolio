@@ -1,0 +1,41 @@
+<div class="row content-inner">
+  <div class="col-xs-12 project-carousel">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="inner">
+          <iframe src="https://www.youtube.com/embed/iI_SSWB3YHs" frameborder="0" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-xs-12 col-sm-4">
+    <div class="row">
+      <div class="project-tags col-xs-12">
+        <span ng-repeat="tag in project.tags | orderBy" class="project-tag">{{tag}}</span>
+      </div>
+      <div class="project-date col-xs-12">
+
+      </div>
+    </div>
+  </div>
+  <div class="col-xs-12 col-sm-8">
+    <div>
+      <p>
+        This project was made in a university course called 3D prototyping. The course had the theme of game controllers made specifically for one game.
+        My group and I chose the game, <a href="http://fezgame.com/" target="_blank">Fez</a>, which has the theme of a 2D character with the ability
+        of moving on 3D space.<br /><br />
+
+        The prototype is a 3D printed 3D model with a arduino nano inside of it which is served input from a bluetooth controller, paired to the pc
+        running the game. In our controller, we focused on mapping the central components of the game onto the controller. It featured support for
+        all the controls in the game, and added another dimension to the controller, as the player is able to manipulate the rotation of the in-game
+        world by turning the cube in the centre of the controller.<br /><br />
+
+        The design of the controller is inspired from arcade games and specifically the
+        <a href="https://upload.wikimedia.org/wikipedia/commons/8/83/NES-controller.jpg" target="_blank">NES controller<a/>.
+        The design of the cube originates from within
+        the Fez game itself. The character in the game collects puzzle pieces, making up a cube reminiscent of the one in the controller when all put
+        together.
+      </p>
+    </div>
+  </div>
+</div>

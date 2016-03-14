@@ -1,0 +1,74 @@
+@import "../../util/util.less";
+
+#skills {
+  #characters-wrapper {
+    height: 220px;
+    overflow-y: hidden;
+    position: relative;
+    margin-left: 0; margin-right: 0; margin-bottom: 20px;
+
+    .skill-button {
+      width: 50px;
+      height: 50px;
+      color: @grey;
+      font-size: 10em;
+      text-align: center;
+      // background: @grey;
+      position: absolute; top: 50%;
+      .translate(translateY(-50%));
+    }
+
+    .skill-button:hover {
+      cursor: pointer;
+    }
+
+    @offset: 10%;
+    #previous-skill-button {
+      left: @offset;
+    }
+
+    #next-skill-button {
+      right: @offset;
+    }
+  }
+
+  #skill-content {
+    margin-left: 0; margin-right: 0;
+
+    .wrapper {
+      p {
+        padding-top: 10px;
+        text-align: justify;
+      }
+
+      ul {
+        margin-top: 10px;
+        padding-left: 0;
+        color: @dark-grey;
+        font-size: 2.2em;
+        font-family: @lato-font-family;
+        display: inline-block;
+        list-style-type: none;
+
+        li {
+          margin: 5px;
+          background: @red;
+          padding: 10px;
+          float: left;
+          color: @white;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  #skills {
+    #characters-wrapper {
+      .skill-button {
+        display: none;
+      }
+    }
+  }
+}

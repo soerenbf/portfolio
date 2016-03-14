@@ -1,0 +1,55 @@
+.tab {
+  font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
+  font-size: 2em;
+  height: 30px;
+  overflow-y: hidden;
+  list-style-type: none;
+  width: 100%;
+  text-align: center;
+  color: #4c4c4c;
+  transition: height 0.5s;
+  -webkit-transition: height 0.5s;
+}
+.tab .nav-item .bracket {
+  font-size: 1.2em;
+  line-height: 30px;
+}
+.tab .nav-item .title {
+  position: relative;
+  bottom: 1px;
+  line-height: 18px;
+  display: none;
+}
+.tab .nav-item:hover {
+  cursor: pointer;
+}
+.tab .nav-dots {
+  position: relative;
+  top: -4px;
+  overflow: hidden;
+}
+.tab .nav-dots .nav-dot {
+  font-family: 'Lato', 'Trebuchet MS', 'Sans serif';
+  font-size: 2em;
+  line-height: 10px;
+  position: relative;
+  top: -7px;
+  color: #4c4c4c;
+}
+.tab .nav-dots .nav-dot.invisible {
+  color: rgba(0, 0, 0, 0);
+}
+.tab.active {
+  color: #e74c3c;
+}
+.tab.expanded {
+  height: 80px;
+}
+.tab.last.expanded {
+  height: 30px;
+}
+@media (min-width: 1400px) {
+  .tab .nav-item:hover .title {
+    display: inline;
+  }
+}

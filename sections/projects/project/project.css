@@ -1,0 +1,158 @@
+body .project {
+  position: relative;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+body .project .project-header {
+  position: relative;
+  padding-bottom: 56.25%;
+  font-family: 'Lato', 'Trebuchet MS', 'Sans serif';
+  background: rgba(0, 0, 0, 0);
+  -webkit-transition: 0.1s all linear;
+  -moz-transition: 0.1s all linear;
+  -o-transition: 0.1s all linear;
+  transition: 0.1s all linear;
+}
+body .project .project-header img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-transition: 0.1s opacity linear;
+  -moz-transition: 0.1s opacity linear;
+  -o-transition: 0.1s opacity linear;
+  transition: 0.1s opacity linear;
+}
+body .project .project-header h2 {
+  color: #4c4c4c;
+  text-align: center;
+  padding: 10px;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
+  margin: 0;
+  opacity: 0;
+  width: 100%;
+  -webkit-transition: 0.1s all linear;
+  -moz-transition: 0.1s all linear;
+  -o-transition: 0.1s all linear;
+  transition: 0.1s all linear;
+}
+body .project .project-header .project-tags {
+  position: absolute;
+  top: 40%;
+  font-size: 2em;
+  color: #4c4c4c;
+  margin: 1em;
+  opacity: 0;
+  -webkit-transition: 0.1s opacity linear;
+  -moz-transition: 0.1s opacity linear;
+  -o-transition: 0.1s opacity linear;
+  transition: 0.1s opacity linear;
+}
+body .project .project-header .project-tags .project-tag {
+  float: left;
+  margin-left: 15px;
+  margin-bottom: 5px;
+}
+body .project .project-header .project-date {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  transform: translateX(-50%);
+  font-size: 2em;
+  opacity: 0;
+  -webkit-transition: 0.1s opacity linear;
+  -moz-transition: 0.1s opacity linear;
+  -o-transition: 0.1s opacity linear;
+  transition: 0.1s opacity linear;
+}
+body .project .project-header:hover {
+  cursor: pointer;
+}
+body .project .project-header:hover img {
+  opacity: 0;
+}
+body .project .project-header:hover h2 {
+  color: #e74c3c;
+  opacity: 1;
+  top: 35%;
+  background: rgba(0, 0, 0, 0);
+}
+body .project .project-header:hover .project-tags {
+  opacity: 1;
+}
+body .project.active .project-header img {
+  opacity: 0;
+}
+body .project.active .project-header h2 {
+  color: #e74c3c;
+  background: rgba(0, 0, 0, 0);
+  top: 50%;
+  opacity: 1;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+body .project.active .project-header .project-date {
+  opacity: 1;
+}
+body .project.active .project-header:hover {
+  cursor: pointer;
+}
+body .project.active .project-header:hover h2 {
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+body .project.active .project-header:hover .project-tags {
+  opacity: 0;
+}
+body .project.active .project-content {
+  height: auto;
+}
+@media (min-width: 768px) {
+  .project:nth-of-type(2n+2) .project-content {
+    margin-left: -390px;
+  }
+  .project:nth-of-type(2n+3) {
+    clear: left;
+  }
+}
+@media (min-width: 992px) {
+  .project:nth-of-type(2n+3) {
+    clear: none;
+  }
+  .project:nth-of-type(3n+1) .project-content {
+    margin-left: -15px;
+  }
+  .project:nth-of-type(3n+2) .project-content {
+    margin-left: -338.328px;
+  }
+  .project:nth-of-type(3n+3) .project-content {
+    margin-left: -661.656px;
+  }
+  .project:nth-of-type(3n+4) {
+    clear: left;
+  }
+}
+@media (min-width: 1200px) {
+  .project:nth-of-type(3n+2) .project-content {
+    margin-left: -405px;
+  }
+  .project:nth-of-type(3n+3) .project-content {
+    margin-left: -795px;
+  }
+}

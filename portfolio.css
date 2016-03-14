@@ -1,0 +1,166 @@
+/**
+* The website takes a mobile-first approach, scaling up and showing more elements and different layouts as the screen size grows.
+*/
+body,
+html {
+  height: 100%;
+}
+p::selection,
+h1::selection,
+h2::selection,
+li::selection {
+  background: #e74c3c;
+  color: #ecf0f1;
+}
+p::moz-selection,
+h1::moz-selection,
+h2::moz-selection,
+li::moz-selection {
+  background: #e74c3c;
+  color: #ecf0f1;
+}
+h1 span::selection {
+  background: #e74c3c;
+  color: #ecf0f1;
+}
+h1 span::moz-selection {
+  background: #e74c3c;
+  color: #ecf0f1;
+}
+body {
+  background: #ecf0f1;
+  color: #4c4c4c;
+  font-size: 50%;
+  line-height: 18px;
+  min-width: 300px;
+}
+body span.highlight {
+  color: #e74c3c;
+}
+body p {
+  font-family: 'Lato', 'Trebuchet MS', 'Sans serif';
+  color: #4c4c4c;
+  font-size: 2.5em;
+  line-height: 1.5em;
+}
+body a {
+  color: #e74c3c;
+}
+body a:hover {
+  text-decoration: none;
+  font-weight: bold;
+}
+body a:visited {
+  color: #e74c3c;
+  text-decoration: none;
+}
+body h1 {
+  font-family: 'Lato', 'Trebuchet MS', 'Sans serif';
+  font-weight: 100;
+  color: #4c4c4c;
+  font-size: 5.5em;
+}
+body h2 {
+  font-family: 'Lato', 'Trebuchet MS', 'Sans serif';
+  font-weight: 100;
+  color: #4c4c4c;
+  font-size: 3em;
+}
+body h3 {
+  font-family: 'Lato', 'Trebuchet MS', 'Sans serif';
+  font-weight: 100;
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 2em;
+}
+body h4.swift {
+  color: #4c4c4c;
+  font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
+  margin: 20px 0px;
+  font-size: 1.6em;
+  line-height: 2.5em;
+  text-align: left;
+}
+body h4.swift .interactive {
+  color: #e74c3c;
+}
+body h4.swift .interactive:hover {
+  cursor: pointer;
+  font-weight: bold;
+}
+body h4.swift span::selection {
+  background: rgba(0, 0, 0, 0);
+  color: #27ae60;
+}
+body h4.swift span::moz-selection {
+  background: rgba(0, 0, 0, 0);
+  color: #27ae60;
+}
+body h4::selection {
+  background: rgba(0, 0, 0, 0);
+  color: #27ae60;
+}
+body h4::moz-selection {
+  background: rgba(0, 0, 0, 0);
+  color: #27ae60;
+}
+body .document {
+  height: 100%;
+  font-size: 2em;
+  font-family: 'Lato', 'Trebuchet MS', 'Sans serif';
+  text-align: center;
+}
+body .document a {
+  color: #4c4c4c;
+}
+body .document a img {
+  width: 50%;
+  display: block;
+  position: relative;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+body .document a:hover,
+body .document a:visited {
+  text-decoration: none;
+}
+body .document a:hover {
+  font-weight: bold;
+}
+body .indented {
+  position: relative;
+}
+body .background {
+  width: 100%;
+}
+body .test {
+  background: #bdc3c7;
+}
+body #content-background {
+  z-index: 0;
+  background: #ecf0f1;
+  position: relative;
+  top: 100%;
+}
+body #content-background section.placeholder {
+  height: 400px;
+}
+@media (min-width: 768px) {
+  body h4.swift {
+    font-size: 2.2em;
+    margin: 50px 0px;
+  }
+}
+@media (min-width: 992px) {
+  body {
+    font-size: 52%;
+  }
+}
+@media (min-width: 1200px) {
+  body {
+    font-size: 60%;
+  }
+}

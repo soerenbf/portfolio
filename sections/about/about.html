@@ -1,0 +1,61 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <h4 class="swift">
+        self.<span class="highlight">about</span> = Database.spillTheBeans(about: "Søren", includeDeepestSecrets: <span class="interactive">{{vm.showSecrets}}</span>);
+      </h4>
+    </div>
+  </div>
+  <div class="row content">
+    <div class="col-xs-10 col-xs-offset-1 col-sm-4 col-sm-offset-0" id="about-image">
+      <img ng-src="{{vm.img}}" title="How do I fix this mess..." />
+    </div>
+    <div class="col-xs-10 col-xs-offset-1 col-sm-1 col-sm-offset-0" id="about-icons">
+      <div class="row">
+        <div class="col-xs-2 col-xs-offset-1 col-sm-12 col-sm-offset-0 about-icon" id="facebook-icon">
+          <a href="https://www.facebook.com/sorenbf" target="_blank" title="Facebook">
+            <i class="fa fa-facebook"></i>
+          </a>
+        </div>
+        <div class="col-xs-2 col-sm-12 about-icon" id="github-icon">
+          <a href="https://www.github.com/soerenbf" target="_blank" title="GitHub">
+            <i class="fa fa-github"></i>
+          </a>
+        </div>
+        <div class="col-xs-2 col-sm-12 about-icon" id="mail-icon">
+          <a href="mailto:hi@sorenbf.dk" title="Mail to hi@sorenbf.dk">
+            <i class="fa fa-envelope"></i>
+          </a>
+        </div>
+        <div class="col-xs-2 col-sm-12 about-icon" id="twitter-icon">
+          <a href="https://www.twitter.com/soerenbf" target="_blank" title="Twitter">
+            <i class="fa fa-twitter"></i>
+          </a>
+        </div>
+        <div class="col-xs-2 col-sm-12 about-icon" id="linkedin-icon">
+          <a href="https://dk.linkedin.com/in/søren-bruus-frank-2958044b" target="_blank" title="LinkedIn">
+            <i class="fa fa-linkedin"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-10 col-xs-offset-1 col-sm-7 col-sm-offset-0" id="about-text">
+      <p>
+        {{vm.text}}
+      </p>
+      <div ng-show="vm.showSecrets" id="secrets">
+        <p>
+          {{vm.secrets}}
+        </p>
+      </div>
+      <div class="row" id="documents">
+        <div class="document col-xs-6 col-sm-4 col-sm-offset-2" id="cv-doc">
+          <a href="documents/cv_soren.pdf" target="_blank"><img src="images/backgrounds/pdf.svg" />Curriculum Vitæ</a>
+        </div>
+        <div class="document col-xs-6 col-sm-4" id="thesis-doc">
+          <a href="documents/thesis_soren_jan_2016.pdf" target="_blank"><img src="images/backgrounds/pdf.svg" />Master thesis</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

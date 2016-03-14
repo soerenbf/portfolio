@@ -1,0 +1,30 @@
+#nav-bar {
+  display: none;
+  z-index: 1;
+  position: fixed;
+  right: 0;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+#nav-bar ul {
+  padding: 0px;
+  margin: 0;
+}
+@media (min-width: 768px) {
+  #nav-bar {
+    display: block;
+  }
+  #nav-bar ul {
+    width: 35px;
+  }
+}
+@media (min-width: 1400px) {
+  #nav-bar ul {
+    width: 100px;
+    margin-right: 10px;
+  }
+}
