@@ -10,7 +10,7 @@
   /* @ngInject */
   function about($q) {
     var img = 'images/other/about.png';
-    var email = 'hi@sorenbf.dk';
+    var email = 'soerenbf@gmail.com';
 
     var service = {
       all: all
